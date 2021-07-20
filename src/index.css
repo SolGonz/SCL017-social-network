@@ -1,0 +1,73 @@
+.fondologo{ 
+    position: absolute;
+    width: 375px;
+    height: 254px;
+    left: 0px;
+    top: 0px;
+    background: rgba(148, 195, 103, 0.52);
+}
+.imagen{
+    position: center;
+    width: 165px;
+    height: 155px;
+    left: 115px;
+    top: 51px;
+    margin-left: 105px;
+    margin-top: 35px;
+
+    mix-blend-mode: normal;
+    border-radius: 101px;
+}
+.saludo{
+    position: absolute;
+    width: 278.58px;
+    height: 34px;
+    left: 48px;
+    top: 189px;
+
+    font-family: Tahoma, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 27px;
+    text-align: center;
+    margin-top: -10px;
+
+    color: #1b552c;
+}
+
+.fondoIniciar{
+    float:relative;
+    
+
+}
+.parrafoInicio{
+    position: absolute;
+    width: 290px;
+    height: 34px;
+    left: 10.5px;
+    top: 11px;
+    margin-top: 265px;
+    margin-left: 28px;
+    text-align: center; 
+    font-weight: bold; 
+    font-family: Tahoma, sans-serif;
+    font-size: 19px;
+    color: #043d14;
+}
+
+.inputLogin {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #CCC;
+    line-height: 32px;
+}
+
+.btnIniciar {
+    background: rgba(73, 146, 79, 0.88);
+    border-radius: 20px;
+    color: #FFF;
+    border: 0px;
+    line-height: 32px;
+    display: block;
+}
