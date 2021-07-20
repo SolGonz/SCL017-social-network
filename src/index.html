@@ -7,8 +7,27 @@
   <link crossorigin="anonymous" media="all"
     rel="stylesheet" href="index.css" />
   <title>Document</title>
-</head>
+ </head>
 <body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBR5ytaN8RV09i9qV4b4gxUj720zy2q6Kg",
+    authDomain: "veggiebookrecipes.firebaseapp.com",
+    projectId: "veggiebookrecipes",
+    storageBucket: "veggiebookrecipes.appspot.com",
+    messagingSenderId: "926850678058",
+    appId: "1:926850678058:web:467ea05b2de5d1b3ba7253"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
   <script type="module" src="main.js"></script>
   <div id="root"></div>
 </body>
