@@ -1,5 +1,4 @@
 export const login = () => {
-
     const mainLogin = document.createElement("div");
     mainLogin.className = "mainlogin";
 
@@ -8,7 +7,7 @@ export const login = () => {
     mainLogin.appendChild(fondoLogo);
 
     const itemImg = document.createElement("img");
-    itemImg.src ='/img/brocoli.png';
+    itemImg.src ='/src/img/brocoli.png';
     itemImg.className = "imagen";
     fondoLogo.appendChild(itemImg);
 
@@ -23,29 +22,46 @@ export const login = () => {
     mainLogin.appendChild(fondoIniciarSesion);
 
 
-    const parrafoInicio = document.createElement("div")
+    const parrafoInicio = document.createElement("h2");
     parrafoInicio.className = "parrafoInicio";
     const textoInicio = document.createTextNode("Inicia sesión en VeggieBook.");
     parrafoInicio.appendChild(textoInicio);
+    fondoIniciarSesion.appendChild(parrafoInicio);
 
 
     const mailInput = document.createElement("input");
-    mailInput.className = "inputLogin";
-    mailInput.placeholder = "Ingresa tu correo...";
-    parrafoInicio.appendChild(mailInput)
+    mailInput.className = "inputMail";
+    mailInput.placeholder = "Ingresa tu correo";
+    fondoIniciarSesion.appendChild(mailInput)
 
     const mailPassword = document.createElement("input");
-    mailPassword.className = "inputLogin";
-    mailPassword.placeholder = "Ingresa tu contraseña...";
+    mailPassword.className = "inputPassword";
+    mailPassword.placeholder = "Ingresa tu contraseña";
     mailPassword.type = "password"
-    parrafoInicio.appendChild(mailPassword)
+    fondoIniciarSesion.appendChild(mailPassword)
 
     const btnIniciar = document.createElement("button");
     btnIniciar.className = "btnIniciar"
     btnIniciar.innerText = "Iniciar sesión"
-    parrafoInicio.appendChild(btnIniciar)
+    fondoIniciarSesion.appendChild(btnIniciar);
 
-    fondoIniciarSesion.appendChild(parrafoInicio);
+    const parrafoGoogle = document.createElement("p");
+    parrafoGoogle.className = "parrafoGoogle";
+    const textoGoogle = document.createTextNode("O entra con");
+    parrafoGoogle.appendChild(textoGoogle);
+    fondoIniciarSesion.appendChild(parrafoGoogle);
 
-    document.getElementById("root").appendChild(mainLogin)
+    const googleBoton = document.createElement("button");
+    googleBoton.className = "googleBoton";
+    fondoIniciarSesion.appendChild(googleBoton);
+
+    const parrafoRegistro = document.createElement("p");
+    parrafoRegistro.className = "parrafoRegistro";
+    const textoRegistro = document.createTextNode("Aun no te registas?");
+    parrafoRegistro.appendChild(textoRegistro);
+    fondoIniciarSesion.appendChild(parrafoRegistro);
+
+    
+
+    document.getElementById("root").appendChild(mainLogin);
 }
