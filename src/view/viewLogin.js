@@ -7,7 +7,7 @@ export const login = () => {
     mainLogin.appendChild(fondoLogo);
 
     const itemImg = document.createElement("img");
-    itemImg.src ='/src/img/brocoli.png';
+    itemImg.src ='/src/img/brocolib.png';
     itemImg.className = "imagen";
     fondoLogo.appendChild(itemImg);
 
