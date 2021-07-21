@@ -7,7 +7,7 @@ export const login = () => {
     mainLogin.appendChild(fondoLogo);
 
     const itemImg = document.createElement("img");
-    itemImg.src ='/src/img/brocolib.png';
+    itemImg.src ='/src/img/brocoli.png';
     itemImg.className = "imagen";
     fondoLogo.appendChild(itemImg);
 
@@ -61,7 +61,6 @@ export const login = () => {
     parrafoRegistro.appendChild(textoRegistro);
     fondoIniciarSesion.appendChild(parrafoRegistro);
 
-    
 
     document.getElementById("root").appendChild(mainLogin);
 }
