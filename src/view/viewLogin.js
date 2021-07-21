@@ -55,11 +55,27 @@ export const login = () => {
     googleBoton.className = "googleBoton";
     fondoIniciarSesion.appendChild(googleBoton);
 
+    const divRegistro = document.createElement("div");
+    divRegistro.className = "divRegistro";
+
     const parrafoRegistro = document.createElement("p");
+    const textoRegistro = document.createTextNode("Aún no te registras?");
     parrafoRegistro.className = "parrafoRegistro";
-    const textoRegistro = document.createTextNode("Aun no te registas?");
+
+    const parrafoRegistroAqui = document.createElement("a");
+    const textoRegistroAqui = document.createTextNode("Hazlo aquí.");
+    parrafoRegistroAqui.className = "parrafoRegistroAqui";
+    textoRegistroAqui.setAttribute = ('href', 'https://youtu.be/gsePWTrOCZE')
+
+    
+   
     parrafoRegistro.appendChild(textoRegistro);
-    fondoIniciarSesion.appendChild(parrafoRegistro);
+    parrafoRegistroAqui.appendChild(textoRegistroAqui);
+    divRegistro.appendChild(parrafoRegistro);
+    divRegistro.appendChild(parrafoRegistroAqui);
+    fondoIniciarSesion.appendChild(divRegistro);
+
+    ;
 
     
 
