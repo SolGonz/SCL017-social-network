@@ -1,7 +1,7 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { login } from './view/viewLogin.js';
-import { registro } from './view/viewRegistro.js';
-login();
+import { login } from './lib/view/viewLogin.js';
+import { registro } from './lib/view/viewRegistro.js';
 
+login();
 registro();

@@ -1,3 +1,5 @@
+import { loginGoogle } from '../loginGoogle.js';
+
 export const login = () => {
     const mainLogin = document.createElement("div");
     mainLogin.className = "mainlogin";
@@ -65,7 +67,7 @@ export const login = () => {
     const parrafoRegistroAqui = document.createElement("a");
     const textoRegistroAqui = document.createTextNode("Hazlo aquí.");
     parrafoRegistroAqui.className = "parrafoRegistroAqui";
-    textoRegistroAqui.setAttribute = ('href', 'https://youtu.be/gsePWTrOCZE')
+    // textoRegistroAqui.setAttribute = ('href', 'https://youtu.be/gsePWTrOCZE')
 
     
    
@@ -75,9 +77,14 @@ export const login = () => {
     divRegistro.appendChild(parrafoRegistroAqui);
     fondoIniciarSesion.appendChild(divRegistro);
 
-    ;
-
-    
-
     document.getElementById("root").appendChild(mainLogin);
+
+    const btnGoogle = mainLogin.querySelector(".googleBoton");
+    btnGoogle.addEventListener("click", () => {
+        loginGoogle();
+    console.log("boton google");
+    })
+
 }
+
+
