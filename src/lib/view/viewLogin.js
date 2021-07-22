@@ -1,3 +1,5 @@
+import { loginGoogle } from '../loginGoogle.js';
+
 export const login = () => {
     const mainLogin = document.createElement("div");
     mainLogin.className = "mainlogin";
@@ -7,7 +9,7 @@ export const login = () => {
     mainLogin.appendChild(fondoLogo);
 
     const itemImg = document.createElement("img");
-    itemImg.src ='/src/img/brocoli.png';
+    itemImg.src ='/img/brocoli.png';
     itemImg.className = "imagen";
     fondoLogo.appendChild(itemImg);
 
@@ -55,12 +57,30 @@ export const login = () => {
     googleBoton.className = "googleBoton";
     fondoIniciarSesion.appendChild(googleBoton);
 
-    const parrafoRegistro = document.createElement("p");
-    parrafoRegistro.className = "parrafoRegistro";
-    const textoRegistro = document.createTextNode("Aun no te registas?");
-    parrafoRegistro.appendChild(textoRegistro);
-    fondoIniciarSesion.appendChild(parrafoRegistro);
+    const divRegistro = document.createElement("div");
+    divRegistro.className = "divRegistro";
 
+    const parrafoRegistro = document.createElement("p");
+    const textoRegistro = document.createTextNode("Aún no te registras?");
+    parrafoRegistro.className = "parrafoRegistro";
+
+    const parrafoRegistroAqui = document.createElement("a");
+    const textoRegistroAqui = document.createTextNode("Hazlo aquí.");
+    parrafoRegistroAqui.className = "parrafoRegistroAqui";
+    parrafoRegistro.appendChild(textoRegistro);
+    parrafoRegistroAqui.appendChild(textoRegistroAqui);
+    divRegistro.appendChild(parrafoRegistro);
+    divRegistro.appendChild(parrafoRegistroAqui);
+    fondoIniciarSesion.appendChild(divRegistro);
 
     document.getElementById("root").appendChild(mainLogin);
+
+    const btnGoogle = mainLogin.querySelector(".googleBoton");
+    btnGoogle.addEventListener("click", () => {
+        loginGoogle();
+    console.log("boton google");
+    })
+
 }
+
+

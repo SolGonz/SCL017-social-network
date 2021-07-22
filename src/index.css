@@ -4,25 +4,27 @@
 }
 .mainLogin{
     display: flex;
+    flex-direction: column;
+    
 }
 .fondologo{ 
     display: flex;
     flex-direction: column;
-    height: 254px;
+    width: 100%;
     background: rgba(148, 195, 103, 0.52);
     justify-content: center;
     align-items: center;
+    border-radius: 3px;
 }
 .imagen{
-    align-self: center;
     width: 165px;
     height: 155px;
     margin-top: 30px;
-    /* mix-blend-mode: normal; */
+
 }
 .saludo{
-    font-family: Tahoma, sans-serif;
     font-weight: normal;
+    font-family: Tahoma, sans-serif;
     font-size: 16px;
     line-height: 27px;
     text-align: center;
@@ -42,29 +44,30 @@
     font-family: Tahoma, sans-serif;
     font-size: 19px;
     color: #043d14;
-    flex-direction: column;
     margin: 25px 5px;
 
 }
 
 .inputMail {
     background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     font-style: italic;
     text-align: center;
     border: 1px solid #CCC;
-    width: 250px;
+    border-radius: 4px;
+    width: 70%;
     line-height: 32px;
     align-self: center;
 }
 
 .inputPassword {
     background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     font-style: italic;
     text-align: center;
     border: 1px solid #CCC;
-    width: 250px;
+    border-radius: 4px;
+    width: 70%;
     line-height: 32px;
     align-self: center;
     margin-top: 10px;
@@ -72,11 +75,88 @@
 
 .btnIniciar {
     background: rgba(73, 146, 79, 0.88);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     color: #FFF;
     border: 0px;
     width: 150px;
     line-height: 32px;
-    margin-top: 20px;
-  
+    margin-top: 30px;
+    cursor:pointer;
+}
+.parrafoGoogle{
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    margin: 5px;
+    color: #FE8358;
+    font-weight: bold;
+}
+.googleBoton{
+    background: url('img/logoGoogle.png');
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.divRegistro{
+    display: flex;
+    flex-direction: row;
+    margin-top: 35px;
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
+}
+.parrafoRegistro{
+    margin-right: 8px;
+}
+.parrafoRegistroAqui{
+    color: #FE8358;
+    cursor: pointer;
+}
+.mainRegistro{
+    display: flex;
+    flex-direction: column;
+}
+.itemImagen{
+    flex-direction: column;
+    justify-content: center;
+    align-content: center; 
+    width: 105px;
+    height: 110px;
+}
+.tituloRegistro{
+    font-weight: normal;
+    font-family: Tahoma, sans-serif;
+    font-size: 19px;
+    line-height: 3.0;
+    text-align: center;
+    color: #1b552c;
+    letter-spacing: 3px;
+}
+.datos{
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    font-family: Tahoma, sans-serif; 
+    font-weight: normal;
+    color: #1b552c;
+    font-size: 15px;
+    line-height: 2.5;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+.textoNombre{
+    clear: both;
+}
+.btnRegistro{
+    background: rgba(73, 146, 79, 0.88);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    color: #FFF;
+    border: 0px;
+    width: 150px;
+    line-height: 32px;
+    margin-top: 30px;
+    cursor:pointer;
 }
