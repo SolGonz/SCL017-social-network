@@ -9,7 +9,7 @@ export const login = () => {
     mainLogin.appendChild(fondoLogo);
 
     const itemImg = document.createElement("img");
-    itemImg.src ='/src/img/brocolib.png';
+    itemImg.src ='/img/brocoli.png';
     itemImg.className = "imagen";
     fondoLogo.appendChild(itemImg);
 
@@ -67,10 +67,6 @@ export const login = () => {
     const parrafoRegistroAqui = document.createElement("a");
     const textoRegistroAqui = document.createTextNode("Hazlo aquí.");
     parrafoRegistroAqui.className = "parrafoRegistroAqui";
-    // textoRegistroAqui.setAttribute = ('href', 'https://youtu.be/gsePWTrOCZE')
-
-    
-   
     parrafoRegistro.appendChild(textoRegistro);
     parrafoRegistroAqui.appendChild(textoRegistroAqui);
     divRegistro.appendChild(parrafoRegistro);
