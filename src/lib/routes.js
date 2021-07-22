@@ -26,7 +26,7 @@ const showView = (hash) => {
             containerRoot.appendChild(registro());
             break
         default:
-            containerRoot.innerHTML = '<h2>Página no encontrada :(</h2>';
+            containerRoot.innerHTML = '<h2>Página no encontrada :( :( </h2>';
         
     }
 };
