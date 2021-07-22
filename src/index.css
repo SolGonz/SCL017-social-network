@@ -92,7 +92,7 @@
     font-weight: bold;
 }
 .googleBoton{
-    background: url('/src/img/logoGoogle.png');
+    background: url('img/logoGoogle.png');
     width: 30px;
     height: 30px;
     border: none;

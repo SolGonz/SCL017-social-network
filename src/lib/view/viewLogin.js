@@ -1,6 +1,7 @@
 import { loginGoogle } from '../loginGoogle.js';
 
 export const login = () => {
+
     const mainLogin = document.createElement("div");
     mainLogin.className = "mainlogin";
 
@@ -9,7 +10,7 @@ export const login = () => {
     mainLogin.appendChild(fondoLogo);
 
     const itemImg = document.createElement("img");
-    itemImg.src ='/src/img/brocolib.png';
+    itemImg.src ='img/brocoli.png';
     itemImg.className = "imagen";
     fondoLogo.appendChild(itemImg);
 
@@ -67,7 +68,7 @@ export const login = () => {
     const parrafoRegistroAqui = document.createElement("a");
     const textoRegistroAqui = document.createTextNode("Hazlo aquí.");
     parrafoRegistroAqui.className = "parrafoRegistroAqui";
-    // textoRegistroAqui.setAttribute = ('href', 'https://youtu.be/gsePWTrOCZE')
+    parrafoRegistroAqui.setAttribute('href', '#/registro');
 
     
    
@@ -77,14 +78,15 @@ export const login = () => {
     divRegistro.appendChild(parrafoRegistroAqui);
     fondoIniciarSesion.appendChild(divRegistro);
 
-    document.getElementById("root").appendChild(mainLogin);
+    // document.getElementById("root").appendChild(mainLogin);
 
     const btnGoogle = mainLogin.querySelector(".googleBoton");
     btnGoogle.addEventListener("click", () => {
         loginGoogle();
     console.log("boton google");
-    })
-
-}
+        });
+        
+    return mainLogin;
+};
 
 

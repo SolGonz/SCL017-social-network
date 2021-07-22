@@ -3,9 +3,10 @@ export const registro = () => {
     mainRegistro.className = "mainRegistro";
 
     const itemImg = document.createElement("img");
-    itemImg.src = 'src/img/brocoli.png';
+    itemImg.src ='img/brocoli.png';
     itemImg.className = "imagen";
     mainRegistro.appendChild(itemImg);
 
     // document.getElementById("root").appendChild(mainRegistro);
+    return mainRegistro;
 }
