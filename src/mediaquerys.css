@@ -1,14 +1,45 @@
 /* Tablet */
 @media (min-width: 768px){
+#root{
+    height: 800px;
+}
+.mainLogin{
+    height: 100%;
+}
+.fondoLogo{
+    height: 45%;
+    border-radius: 8px;
+}
+.imagen{
+    width: 230px;
+    height: 220px;
+    margin-top: 0;
 
-
-
+}
+.fondoIniciar{
+    height: 55%;
+}
+.saludo{
+    font-size: 24px;
+}
+.parrafoInicio{
+    font-size: 26px;
+}
+.divRegistro{
+    font-size: 18px;
+    margin-top: 80px;
+}
+.btnIniciar {
+    width: 200px;
+    font-size: 16px;
+    margin-top: 40px;
+}
 }
 
 
 
 /* Desktop */
-@media (min-width: 992px) {
+@media (min-width: 1025px) {
 #root{
     display:flex;
     height: 700px;
