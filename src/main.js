@@ -1,9 +1,11 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { login } from './lib/view/viewLogin.js';
-import { registro } from './lib/view/viewRegistro.js';
-;
+import { route } from "./lib/routes.js";
 
-login();
-
-registro();
+window.addEventListener("load", () => {
+    route(window.location.hash);
+  });
+  
+  window.addEventListener("hashchange", () => {
+    route(window.location.hash);
+  });

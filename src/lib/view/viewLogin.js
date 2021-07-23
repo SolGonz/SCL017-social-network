@@ -1,15 +1,16 @@
 import { loginGoogle } from '../loginGoogle.js';
 
 export const login = () => {
+
     const mainLogin = document.createElement("div");
-    mainLogin.className = "mainlogin";
+    mainLogin.className = "mainLogin";
 
     const fondoLogo = document.createElement("div");
-    fondoLogo.className = "fondologo";
+    fondoLogo.className = "fondoLogo";
     mainLogin.appendChild(fondoLogo);
 
     const itemImg = document.createElement("img");
-    itemImg.src ='/img/brocoli.png';
+    itemImg.src ='img/brocoli.png';
     itemImg.className = "imagen";
     fondoLogo.appendChild(itemImg);
 
@@ -36,6 +37,7 @@ export const login = () => {
     mailInput.placeholder = "Ingresa tu correo";
     fondoIniciarSesion.appendChild(mailInput)
 
+
     const mailPassword = document.createElement("input");
     mailPassword.className = "inputPassword";
     mailPassword.placeholder = "Ingresa tu contraseña";
@@ -46,7 +48,7 @@ export const login = () => {
     btnIniciar.className = "btnIniciar"
     btnIniciar.innerText = "Iniciar sesión"
     fondoIniciarSesion.appendChild(btnIniciar);
-
+    
     const parrafoGoogle = document.createElement("p");
     parrafoGoogle.className = "parrafoGoogle";
     const textoGoogle = document.createTextNode("O entra con");
@@ -67,20 +69,44 @@ export const login = () => {
     const parrafoRegistroAqui = document.createElement("a");
     const textoRegistroAqui = document.createTextNode("Hazlo aquí.");
     parrafoRegistroAqui.className = "parrafoRegistroAqui";
+    parrafoRegistroAqui.setAttribute('href', '#/registro');
+
+    
+   
     parrafoRegistro.appendChild(textoRegistro);
     parrafoRegistroAqui.appendChild(textoRegistroAqui);
     divRegistro.appendChild(parrafoRegistro);
     divRegistro.appendChild(parrafoRegistroAqui);
     fondoIniciarSesion.appendChild(divRegistro);
 
-    document.getElementById("root").appendChild(mainLogin);
+   
+    //funcion del boton iniciar sesión
+    btnIniciar.addEventListener('click', ()=>{
+       const email = document.querySelector('.inputMail').value;
+       const password = document.querySelector('.inputPassword').value;
 
+       firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user;
+    // ...
+        })
+        .catch((error) => {
+         var errorCode = error.code;
+        var errorMessage = error.message;
+        });
+       
+    
+    });
+
+    
+    //funcion del boton iniciar sesión google
     const btnGoogle = mainLogin.querySelector(".googleBoton");
     btnGoogle.addEventListener("click", () => {
         loginGoogle();
-    console.log("boton google");
-    })
-
-}
+        });
+        
+    return mainLogin;
+};
 
 
