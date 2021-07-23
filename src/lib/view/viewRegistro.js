@@ -68,7 +68,7 @@ export const registro = () => {
     mainRegistro.appendChild(btnRegistro);
     btnRegistro.addEventListener("click", () => {
         // Obtengo todos los campos que puso la usuaria
-        const nombre = mainRegistro.querySelector(".inputNombre").value;
+        const displayName = mainRegistro.querySelector(".inputNombre").value;
         const correo = mainRegistro.querySelector(".inputCorreo").value;
         const password = mainRegistro.querySelector(".inputPassword").value;
         const dieta = mainRegistro.querySelector(".selectDieta").value;
@@ -82,8 +82,7 @@ export const registro = () => {
                 const user = firebase.auth().currentUser
                 // Actualizamos el perfil del usuario con el nombre que ingresò y su preferencia de dieta de alimentaciòn.
                 user.updateProfile({
-                    displayName: nombre,
-                    phoneNumber: dieta
+                    displayName
                 }).catch((error) => console.log({ error }))
                 user.sendEmailVerification().then(() => {
                     alert('Te enviamos un mail de verificacion')
