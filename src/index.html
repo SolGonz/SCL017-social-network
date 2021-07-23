@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link crossorigin="anonymous" media="all"
-    rel="stylesheet" href="index.css" />
-  <title>Document</title>
+  <link rel="shortcut icon" href="img/favicon.png">
+  <link crossorigin="anonymous" media="all" rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="mediaquerys.css">
+  <title>Veggiebook</title>
  </head>
 <body>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -28,6 +29,7 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
 </script>
   <script type="module" src="main.js"></script>
   <div id="root"></div>

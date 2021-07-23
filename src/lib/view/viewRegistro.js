@@ -1,3 +1,5 @@
+
+
 export const registro = () => {
     const mainRegistro = document.createElement("div");
     mainRegistro.className = "mainRegistro";
@@ -66,6 +68,25 @@ export const registro = () => {
     btnRegistro.className = "btnRegistro"
     btnRegistro.innerText = "Registrarme"
     mainRegistro.appendChild(btnRegistro);
+
+    btnRegistro.addEventListener('click', ()=>{
+        const email = document.querySelector('.inputCorreo').value;
+        const password = document.querySelector('.inputPassword').value;
+
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          // Signed in
+        var user = userCredential.user;
+           // ...
+        })
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+              // ..
+            });
+          
+          
+    });
 
     return mainRegistro;
 }
