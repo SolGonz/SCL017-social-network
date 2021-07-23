@@ -66,6 +66,44 @@ export const registro = () => {
     btnRegistro.className = "btnRegistro"
     btnRegistro.innerText = "Registrarme"
     mainRegistro.appendChild(btnRegistro);
+    btnRegistro.addEventListener("click", () => {
+        // Obtengo todos los campos que puso la usuaria
+        const nombre = mainRegistro.querySelector(".inputNombre").value;
+        const correo = mainRegistro.querySelector(".inputCorreo").value;
+        const password = mainRegistro.querySelector(".inputPassword").value;
+        const dieta = mainRegistro.querySelector(".selectDieta").value;
+
+        // Registro con correo y contraseña
+        firebase
+            .auth()
+            .createUserWithEmailAndPassword(correo, password)
+            .then(() => {
+                // Obtenemos el usuario creado
+                const user = firebase.auth().currentUser
+                // Actualizamos el perfil del usuario con el nombre que ingresò y su preferencia de dieta de alimentaciòn.
+                user.updateProfile({
+                    displayName: nombre,
+                    phoneNumber: dieta
+                }).catch((error) => console.log({ error }))
+                user.sendEmailVerification().then(() => {
+                    alert('Te enviamos un mail de verificacion')
+                }).catch((error) => {
+                    console.log({ error })
+                })
+            })
+            .catch((error) => {
+                console.log({ error })
+            })
+
+        /* firebase.auth().signInWithEmailAndPassword(correo, password).then(user => {
+            console.log({
+                user
+            })
+            console.log({
+                currentUser: firebase.auth().currentUser
+            })
+        }) */
+    })
 
     return mainRegistro;
 }
