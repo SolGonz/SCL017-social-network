@@ -31,6 +31,18 @@
     font-size: 16px;
     margin-top: 40px;
 }
+.fondoLogoRegistro{
+    height: 30%;
+    font-size: 18px;
+
+  }
+  .itemImagen{
+    width: 80px;
+    height: 82px;
+}
+.fondoRegistrarse{
+    height: 70%;
+    font-size: 18px;
 }
 
 
@@ -47,14 +59,15 @@
 .mainLogin {
     display: flex;
     flex-direction: row;
-    width: 60%;
-    
+    width: 60%;    
+    margin-top: 10%;
 }
 .fondoLogo{
   width: 50%;
   height: 600px;
   border: 1px solid #8BA889;
   border-radius: 10px;
+
 }
 .imagen{
     width: 230px;
@@ -77,6 +90,26 @@
 }
 .divRegistro{
     margin-top: 60px;
+}
+.mainRegistro {
+    display: flex;
+    flex-direction: row;
+    width: 60%; 
+    height: 600px;
+}
+.fondoLogoRegistro{
+    width: 50%;
+    height: 600px;
+    background: rgba(148, 195, 103, 0.52);
+    border: 1px solid #8BA889;
+    border-radius: 10px;
+  }
+.fondoRegistrarse{
+    width: 50%; 
+    border: 1px solid #8BA889;
+    height: 600px;
+    border-radius: 10px;
+    margin:0;
 }
 
 }
