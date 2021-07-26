@@ -1,0 +1,54 @@
+/* Tablet */
+@media (min-width: 768px){
+
+
+
+}
+
+
+
+/* Desktop */
+@media (min-width: 992px) {
+#root{
+    display:flex;
+    height: 700px;
+    justify-content: center;
+    align-items: center;
+    background: #FCFCFB;
+}
+.mainLogin {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    
+}
+.fondoLogo{
+  width: 50%;
+  height: 600px;
+  border: 1px solid #8BA889;
+  border-radius: 10px;
+}
+.imagen{
+    width: 230px;
+    height: 220px;
+    margin-top: 0;
+
+}
+.saludo{
+    font-size: 22px;
+}
+.fondoIniciar{
+    width: 50%;
+    height: 600px;
+    border: 1px solid #8BA889;
+    border-radius: 10px;
+}
+.parrafoInicio{
+    font-size: 22px;
+    margin-top: 80px;
+}
+.divRegistro{
+    margin-top: 60px;
+}
+
+}

@@ -2,12 +2,11 @@
     margin: 0;
     padding: 0;
 }
+
 .mainLogin{
     display: flex;
     flex-direction: column;
-    
 }
-
 .fondologo{ 
     display: flex;
     flex-direction: column;
