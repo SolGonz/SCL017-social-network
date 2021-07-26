@@ -3,10 +3,10 @@ import { loginGoogle } from '../loginGoogle.js';
 export const login = () => {
 
     const mainLogin = document.createElement("div");
-    mainLogin.className = "mainlogin";
+    mainLogin.className = "mainLogin";
 
     const fondoLogo = document.createElement("div");
-    fondoLogo.className = "fondologo";
+    fondoLogo.className = "fondoLogo";
     mainLogin.appendChild(fondoLogo);
 
     const itemImg = document.createElement("img");
