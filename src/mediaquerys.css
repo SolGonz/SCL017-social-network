@@ -36,16 +36,12 @@
     font-size: 18px;
 
   }
-  .itemImagen{
-    width: 80px;
-    height: 82px;
-}
 .fondoRegistrarse{
     height: 70%;
     font-size: 18px;
 }
 
-
+}
 
 /* Desktop */
 @media (min-width: 1025px) {
@@ -98,6 +94,7 @@
     height: 600px;
 }
 .fondoLogoRegistro{
+    justify-content: center;
     width: 50%;
     height: 600px;
     background: rgba(148, 195, 103, 0.52);
@@ -105,6 +102,7 @@
     border-radius: 10px;
   }
 .fondoRegistrarse{
+    justify-content: center;
     width: 50%; 
     border: 1px solid #8BA889;
     height: 600px;

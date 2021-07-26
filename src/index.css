@@ -153,14 +153,14 @@
 
 .fondoRegistrarse{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     height: 70%;
     font-family: Tahoma, sans-serif; 
     font-weight: normal;
     color: #1b552c;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 2.5;
     background: rgba(239, 247, 239);
 }
@@ -168,7 +168,7 @@
 .textoNombre{
     clear: both;
     font-family: Tahoma, sans-serif;
-    font-size: 19px;
+    font-size: 22px;
     color: #043d14;
     
 }
