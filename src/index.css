@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
 }
-.fondoLogo{ 
+.fondologo{ 
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -17,10 +17,11 @@
     border-radius: 3px;
 }
 .imagen{
-    width: 165px;
-    height: 155px;
-    margin-top: 30px;
-
+    flex-direction: column;
+    justify-content: center;
+    align-content: center; 
+    width: 105px;
+    height: 110px;
 }
 .saludo{
     font-weight: normal;
@@ -116,7 +117,18 @@
 .mainRegistro{
     display: flex;
     flex-direction: column;
+    background: rgba(239, 247, 239);
 }
+    
+.fondoLogoRegistro{ 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
 .itemImagen{
     flex-direction: column;
     justify-content: center;
@@ -133,7 +145,22 @@
     color: #1b552c;
     letter-spacing: 3px;
 }
-.datos{
+
+.fondoRegistrarse{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Tahoma, sans-serif; 
+    font-weight: normal;
+    color: #1b552c;
+    font-size: 15px;
+    line-height: 2.5;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/*.fondoRegistrarse{
     flex-direction: column;
     justify-content: center;
     align-content: center;
@@ -144,10 +171,15 @@
     line-height: 2.5;
     margin-left: 20px;
     margin-right: 20px;
-    
-}
+        
+}*/
+
 .textoNombre{
     clear: both;
+    font-family: Tahoma, sans-serif;
+    font-size: 19px;
+    color: #043d14;
+    align-self: flex-start;
 }
 .btnRegistro{
     background: rgba(73, 146, 79, 0.88);
