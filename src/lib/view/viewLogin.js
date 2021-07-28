@@ -48,7 +48,6 @@ export const login = () => {
     btnIniciar.innerText = "Iniciar sesión"
     fondoIniciarSesion.appendChild(btnIniciar);
 
-
     const parrafoGoogle = document.createElement("p");
     parrafoGoogle.className = "parrafoGoogle";
     const textoGoogle = document.createTextNode("O entra con");
@@ -89,5 +88,3 @@ export const login = () => {
         
     return mainLogin;
 };
-
-
