@@ -1,4 +1,4 @@
-import { loginGoogle } from '../loginGoogle.js';
+import { loginGoogle, accederUsuario } from '../funciones.js';
 
 export const login = () => {
 
@@ -47,7 +47,9 @@ export const login = () => {
     btnIniciar.className = "btnIniciar"
     btnIniciar.innerText = "Iniciar sesión"
     fondoIniciarSesion.appendChild(btnIniciar);
-
+    btnIniciar.addEventListener('click', () => {
+        accederUsuario();
+    });    
 
     const parrafoGoogle = document.createElement("p");
     parrafoGoogle.className = "parrafoGoogle";

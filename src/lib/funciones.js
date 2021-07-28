@@ -24,3 +24,28 @@ firebase.auth()
     // ...
   });
 }
+
+export const accederUsuario = () =>{
+  
+  const email = document.querySelector('.inputMail').value;
+  const password = document.querySelector('.inputPassword').value;
+
+firebase.auth().signInWithEmailAndPassword(email, password).then(user => {
+  console.log({
+  user
+  })
+  console.log({
+    currentUser: firebase.auth().currentUser
+  })
+});
+};
+
+    /*.catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });*/
+
+
+
+
+
