@@ -1,6 +1,7 @@
 import { login } from "./view/viewLogin.js";
 import { registro } from "./view/viewRegistro.js";
 import { wall } from "./view/viewWall.js";
+import { profile } from "./view/viewEditProfile.js";
 
 export const route = (hash) => {
 if ( hash === '#/'){
@@ -12,7 +13,7 @@ if ( hash === '#/'){
 } if ( hash === '#/wall'){
     return showView(hash);
 }
-if ( hash === '#/editProfile'){
+if ( hash === '#/profile'){
     return showView(hash);
 }
     return showView(hash);
@@ -34,6 +35,9 @@ const showView = (hash) => {
         case '#/wall':
         containerRoot.appendChild(wall());
             break
+        case '#/profile':
+         containerRoot.appendChild(profile());
+                    break
         default:
             containerRoot.innerHTML = '<h2>Página no encontrada :( :( </h2>';
         
