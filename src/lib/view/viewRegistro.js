@@ -1,3 +1,4 @@
+import { loginEmail } from "../funciones.js";
 
 
 export const registro = () => {
@@ -23,9 +24,6 @@ export const registro = () => {
     fondoRegistrarse.className = "fondoRegistrarse";
     mainRegistro.appendChild(fondoRegistrarse);
 
-  /*  const datos = document.createElement("div");
-    datos.className = "datos";*/
-
     const textoNombre = document.createTextNode("Nombre");
     fondoRegistrarse.appendChild(textoNombre);
     textoNombre.className = "textoNombre";
@@ -33,23 +31,29 @@ export const registro = () => {
     inputNombre.className = "inputNombre";
     inputNombre.placeholder = "Ingresa tu nombre";
     fondoRegistrarse.appendChild(inputNombre)
+
     const textoCorreo = document.createTextNode("Correo electrónico");
     fondoRegistrarse.appendChild(textoCorreo);
+
     textoCorreo.className = "textoCorreo";
     const inputCorreo = document.createElement("input");
     inputCorreo.className = "inputCorreoRegistro";
     inputCorreo.placeholder = "Ingresa tu correo";
     fondoRegistrarse.appendChild(inputCorreo);
+
     const textoContraseña = document.createTextNode("Contraseña");
     fondoRegistrarse.appendChild(textoContraseña);
+
     textoCorreo.className = "textoContraseña";
     const mailPassword = document.createElement("input");
     mailPassword.className = "inputPasswordRegistro";
     mailPassword.placeholder = "Ingresa tu contraseña";
     mailPassword.type = "password"
     fondoRegistrarse.appendChild(mailPassword);
+
     const textoDieta = document.createTextNode("¿Qué dieta sigues?");
     fondoRegistrarse.appendChild(textoDieta);
+
     textoDieta.className = "textoDieta";
     const selectDieta = document.createElement("select");
     selectDieta.className = "selectDieta";
@@ -71,6 +75,7 @@ export const registro = () => {
             selectDieta.appendChild(optionDos);
             selectDieta.appendChild(optionTres);
             fondoRegistrarse.appendChild(selectDieta);
+
     mainRegistro.appendChild(fondoRegistrarse);
 
     const btnRegistro = document.createElement("button");
@@ -81,59 +86,16 @@ export const registro = () => {
     btnRegistro.addEventListener("click", () => {
         // Obtengo todos los campos que puso la usuaria
         const displayName = mainRegistro.querySelector(".inputNombre").value;
-        const correo = mainRegistro.querySelector(".inputCorreo").value;
-        const password = mainRegistro.querySelector(".inputPassword").value;
+        const emailRegistro = mainRegistro.querySelector(".inputCorreoRegistro").value;
+        const passwordRegistro = mainRegistro.querySelector(".inputPasswordRegistro").value;
         const dieta = mainRegistro.querySelector(".selectDieta").value;
 
-        // Registro con correo y contraseña
-        firebase
-            .auth()
-            .createUserWithEmailAndPassword(correo, password)
-            .then(() => {
-                // Obtenemos el usuario creado
-                const user = firebase.auth().currentUser
-                // Actualizamos el perfil del usuario con el nombre que ingresò y su preferencia de dieta de alimentaciòn.
-                user.updateProfile({
-                    displayName
-                }).catch((error) => console.log({ error }))
-                user.sendEmailVerification().then(() => {
-                    alert('Te enviamos un mail de verificacion')
-                }).catch((error) => {
-                    console.log({ error })
-                })
-            })
-            .catch((error) => {
-                console.log({ error })
-            })
+        loginEmail(emailRegistro, passwordRegistro, displayName);
+        window.location.href = '#/login';
+        alert("Ahora ingresa tus datos para acceder a Veggiebook")
 
-        /* firebase.auth().signInWithEmailAndPassword(correo, password).then(user => {
-            console.log({
-                user
-            })
-            console.log({
-                currentUser: firebase.auth().currentUser
-            })
-        }) */
-    })
-
-    btnRegistro.addEventListener('click', ()=>{
-        const email = document.querySelector('.inputCorreo').value;
-        const password = document.querySelector('.inputPassword').value;
-
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-          // Signed in
-        var user = userCredential.user;
-           // ...
-        })
-        .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-              // ..
-            });
-          
-          
     });
+
 
     return mainRegistro;
 }
