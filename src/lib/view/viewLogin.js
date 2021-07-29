@@ -1,6 +1,7 @@
 import { loginGoogle, accederUsuario, observador } from '../funciones.js';
 
 
+
 export const login = () => {
 
     const mainLogin = document.createElement("div");
@@ -48,6 +49,8 @@ export const login = () => {
     btnIniciar.className = "btnIniciar"
     btnIniciar.innerText = "Acceder"
     fondoIniciarSesion.appendChild(btnIniciar);
+
+    //Boton de acceso con email y contraseña creadas
     btnIniciar.addEventListener('click', () => {
         accederUsuario();
         observador();
@@ -64,33 +67,29 @@ export const login = () => {
     googleBoton.className = "googleBoton";
     fondoIniciarSesion.appendChild(googleBoton);
 
+      //Boton de acceso con Google
+      const btnGoogle = mainLogin.querySelector(".googleBoton");
+      btnGoogle.addEventListener("click", () => {
+          loginGoogle();
+          });
+
     const divRegistro = document.createElement("div");
     divRegistro.className = "divRegistro";
 
     const parrafoRegistro = document.createElement("p");
     const textoRegistro = document.createTextNode("Aún no te registras?");
     parrafoRegistro.className = "parrafoRegistro";
-
     const parrafoRegistroAqui = document.createElement("a");
     const textoRegistroAqui = document.createTextNode("Hazlo aquí.");
     parrafoRegistroAqui.className = "parrafoRegistroAqui";
     parrafoRegistroAqui.setAttribute('href', '#/registro');
-
-    
-   
     parrafoRegistro.appendChild(textoRegistro);
     parrafoRegistroAqui.appendChild(textoRegistroAqui);
     divRegistro.appendChild(parrafoRegistro);
     divRegistro.appendChild(parrafoRegistroAqui);
+
     fondoIniciarSesion.appendChild(divRegistro);
 
-    // document.getElementById("root").appendChild(mainLogin);
-
-    const btnGoogle = mainLogin.querySelector(".googleBoton");
-    btnGoogle.addEventListener("click", () => {
-        loginGoogle();
-    console.log("boton google");
-        });
         
     return mainLogin;
 };

@@ -12,6 +12,9 @@ if ( hash === '#/'){
 } if ( hash === '#/wall'){
     return showView(hash);
 }
+if ( hash === '#/editProfile'){
+    return showView(hash);
+}
     return showView(hash);
 };
 
@@ -22,7 +25,7 @@ const showView = (hash) => {
         case '':
             containerRoot.appendChild(login());
             break;
-        case '#/':
+        case '#/login':
             containerRoot.appendChild(login());
             break;
         case '#/registro':
