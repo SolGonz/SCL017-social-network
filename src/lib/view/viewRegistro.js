@@ -20,7 +20,7 @@ export const registro = () => {
     tituloRegistro.appendChild(textoTitulo);
     fondoLogoRegistro.appendChild(tituloRegistro);
 
-    const fondoRegistrarse = document.createElement("div");
+    const fondoRegistrarse = document.createElement("form");
     fondoRegistrarse.className = "fondoRegistrarse";
     mainRegistro.appendChild(fondoRegistrarse);
 
