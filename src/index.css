@@ -3,11 +3,13 @@
     padding: 0;
 }
 body{
-    /* height: 100%; */
+    height: 100vh;
+    background: #FCFCFB;
 }
 #root{
-    height: 100vh;
+    height: 100%;
 }
+/* Vista Login */
 .mainLogin{
     display: flex;
     flex-direction: column;
@@ -57,7 +59,7 @@ body{
 
 }
 
-.inputMail {
+.inputMailLogin {
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     font-style: italic;
@@ -67,9 +69,10 @@ body{
     width: 70%;
     line-height: 32px;
     align-self: center;
+    margin-bottom: 10px;
 }
 
-.inputPassword {
+.inputPasswordLogin {
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     font-style: italic;
@@ -79,7 +82,7 @@ body{
     width: 70%;
     line-height: 32px;
     align-self: center;
-    margin-top: 10px;
+    
 }
 
 .btnIniciar {
@@ -122,10 +125,10 @@ body{
     color: #FE8358;
     cursor: pointer;
 }
+/* Vista Registro */
 .mainRegistro{
     display: flex;
     flex-direction: column;
-    background: rgba(239, 247, 239);
     height: 100%;
 }
     
@@ -133,15 +136,14 @@ body{
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 30%;
     justify-content: center;
     align-items: center;
     border-radius: 3px;
+    background: rgba(239, 247, 239);
 }
 
 .itemImagen{
-    flex-direction: column;
-    justify-content: center;
-    align-content: center; 
     width: 105px;
     height: 110px;
 }
@@ -157,24 +159,24 @@ body{
 
 .fondoRegistrarse{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    height: 70%;
     font-family: Tahoma, sans-serif; 
     font-weight: normal;
     color: #1b552c;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 2.5;
-    margin-left: 20px;
-    margin-right: 20px;
+    background: rgba(239, 247, 239);
 }
 
 .textoNombre{
     clear: both;
     font-family: Tahoma, sans-serif;
-    font-size: 19px;
+    font-size: 22px;
     color: #043d14;
-    align-self: flex-start;
+    
 }
 .btnRegistro{
     background: rgba(73, 146, 79, 0.88);
@@ -198,7 +200,7 @@ body{
     line-height: 32px;
     align-self: center;
 }
-.inputCorreo{
+.inputCorreoRegistro{
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     font-style: italic;
@@ -219,4 +221,16 @@ body{
     align-self: center;
     color: #565550;
     font-style: italic;
+}
+.inputPasswordRegistro {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+    text-align: center;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    width: 70%;
+    line-height: 32px;
+    align-self: center;
+    
 }

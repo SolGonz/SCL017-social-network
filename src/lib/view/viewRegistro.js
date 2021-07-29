@@ -37,14 +37,14 @@ export const registro = () => {
     fondoRegistrarse.appendChild(textoCorreo);
     textoCorreo.className = "textoCorreo";
     const inputCorreo = document.createElement("input");
-    inputCorreo.className = "inputCorreo";
+    inputCorreo.className = "inputCorreoRegistro";
     inputCorreo.placeholder = "Ingresa tu correo";
     fondoRegistrarse.appendChild(inputCorreo);
     const textoContraseña = document.createTextNode("Contraseña");
     fondoRegistrarse.appendChild(textoContraseña);
     textoCorreo.className = "textoContraseña";
     const mailPassword = document.createElement("input");
-    mailPassword.className = "inputPassword";
+    mailPassword.className = "inputPasswordRegistro";
     mailPassword.placeholder = "Ingresa tu contraseña";
     mailPassword.type = "password"
     fondoRegistrarse.appendChild(mailPassword);
@@ -106,14 +106,6 @@ export const registro = () => {
                 console.log({ error })
             })
 
-        /* firebase.auth().signInWithEmailAndPassword(correo, password).then(user => {
-            console.log({
-                user
-            })
-            console.log({
-                currentUser: firebase.auth().currentUser
-            })
-        }) */
     })
 
     btnRegistro.addEventListener('click', ()=>{

@@ -1,4 +1,5 @@
-import { loginGoogle } from '../loginGoogle.js';
+import { loginGoogle, accederUsuario, observador } from '../funciones.js';
+
 
 export const login = () => {
 
@@ -33,20 +34,25 @@ export const login = () => {
 
 
     const mailInput = document.createElement("input");
-    mailInput.className = "inputMail";
+    mailInput.className = "inputMailLogin";
     mailInput.placeholder = "Ingresa tu correo";
     fondoIniciarSesion.appendChild(mailInput)
 
     const mailPassword = document.createElement("input");
-    mailPassword.className = "inputPassword";
+    mailPassword.className = "inputPasswordLogin";
     mailPassword.placeholder = "Ingresa tu contraseña";
     mailPassword.type = "password"
     fondoIniciarSesion.appendChild(mailPassword)
 
     const btnIniciar = document.createElement("button");
     btnIniciar.className = "btnIniciar"
-    btnIniciar.innerText = "Iniciar sesión"
+    btnIniciar.innerText = "Acceder"
     fondoIniciarSesion.appendChild(btnIniciar);
+    btnIniciar.addEventListener('click', () => {
+        accederUsuario();
+        observador();
+
+    });    
 
     const parrafoGoogle = document.createElement("p");
     parrafoGoogle.className = "parrafoGoogle";
