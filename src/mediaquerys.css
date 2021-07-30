@@ -47,7 +47,7 @@
 @media (min-width: 1025px) {
 #root{
     display:flex;
-    height: 700px;
+    height: 100vh;
     justify-content: center;
     align-items: center;
 }
@@ -108,5 +108,19 @@
     border-radius: 10px;
     margin:0;
 }
-
+.mainProfile {
+    display: flex;
+    width: 100%;    
+    height: 100%;
+}
+.mainDatos{
+    width: 60%;
+}
+.btnAtras{
+    height: 45px;
+    width: 180px;
+    font-size: 20px;
+    border: 0px;
+    margin-top: 40px;
+}
 }
