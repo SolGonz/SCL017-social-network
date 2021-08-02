@@ -1,4 +1,5 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500&display=swap');
+  * {
     margin: 0;
     padding: 0;
 }
@@ -233,4 +234,262 @@ body{
     line-height: 32px;
     align-self: center;
     
+}
+
+/* Vista Wall */
+
+.mainWall{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+    
+.fondoLogoWall{ 
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 20%;
+    justify-content: flex-start;
+    align-content: center;
+    background: rgba(192, 220, 168);
+}
+
+/*.itemImagen{
+    width: 105px;
+    height: 110px;
+    align-self: flex-start;
+margen o float
+}*/
+.imgLogoWall{
+    width: 25%;
+    margin: 5%;
+}
+
+.tituloMuro{
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 50px;
+    align-self: center;
+    color: #1b552c;
+    letter-spacing: 3px;
+    margin: 2%;
+}
+
+.fondoMuro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 70%;
+    font-family: Tahoma, sans-serif; 
+    font-weight: normal;
+    color: #1b552c;
+    font-size: 18px;
+    line-height: 2.5;
+    background: rgba(192, 220, 168);
+}
+/*frame verde oscuro*/
+.frameFondoPostear{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background: rgba(1, 38, 12);
+    width: 80%;
+    height: 35%;
+    border-radius: 10px;
+    margin: 5%;
+}
+/*frame blanco*/
+.postear{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    background: rgba(255, 255, 255);
+    height: 100%;
+    border-radius: 10px;
+    margin: 5%;
+    margin-top:15%;
+    margin-right: 5%;
+    
+}
+
+.divBtnPostear {
+    display: flex;
+    justify-content: flex-end;
+    width: 20%;
+    border-radius: 10px;
+    background: rgba(1, 38, 12);;
+    margin: 2%;
+    margin-left: 20%;
+}
+
+.postearImg{
+    width: 40%;
+    border-radius: 10px;
+    border: 2px solid rgba(1, 38, 12);
+    margin: 2%;
+    margin-left: 20%;
+    
+}
+
+
+.inputPostear{
+    background: #FFFFFF;
+    align-self: flex-end;
+    justify-content: center;
+    width: 60%;
+    height: 80%;
+    border-radius: 10px;
+    border: rgba(255, 255, 255);
+    margin: 5%;
+}
+
+.btnPostear{
+    background: rgba(151, 195, 103);
+    align-self: flex-end;
+    color:  rgba(1, 38, 12);
+    height: 30%;
+    width:40%;  
+    border-radius: 20px;
+}
+
+/*post publicado*/ 
+.fondoPostPublicado{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(1, 38, 12);
+    width: 80%;
+    border-radius: 10px;
+    margin: 5%;
+}
+
+.postPublicado{
+    display: flex;
+    justify-content: flex-start;
+    background: rgba(255, 255, 255);
+    width: 80%;
+    border-radius: 10px;
+    margin: 5%;
+}
+
+.imgReceta{
+    width: 30%;
+    border-radius: 10px;
+    margin: 2%;
+   
+}
+
+.inputTextReceta{
+    background: #FFFFFF;
+    align-self: flex-end;
+    justify-content: center;
+    width: 60%;
+    height: 80%;
+    border-radius: 10px;
+    border: rgba(255, 255, 255);
+    margin: 5%;
+}
+
+.divBtnPublicado{
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    border-radius: 10px;
+    background: rgba(1, 38, 12);;
+    margin: 5%;
+    margin-left: 20%;
+}
+
+.btnComentar{
+    background: rgba(151, 195, 103);
+    align-self: flex-end;
+    color:  rgba(1, 38, 12);
+    height: 30%;
+    width:40%;  
+    border-radius: 20px;
+}
+
+.imgLike{
+    height: 20%;
+    align-self: flex-end;
+}
+
+.imgDelete{
+    height: 20%;
+    align-self: flex-end;
+}
+
+/* COMENTARIO */
+
+.fondoComentario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background: rgba(1, 38, 12);
+    width: 80%;
+    height: 35%;
+    border-radius: 10px;
+    margin: 5%;
+}
+
+/*fondo blanco*/
+.comentario{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    background: rgba(255, 255, 255);
+    border-radius: 10px;
+    margin: 5%;
+    margin-right: 5%;
+      
+}
+
+.imgPerfilComentario{
+    width: 30%;
+    border-radius: 100%;
+    border: 2px solid rgba(1, 38, 12);
+    margin: 2%;
+    margin-left: 20%;
+    
+}
+
+.inputTextComentario{
+    background: #FFFFFF;
+    justify-content: center;
+    width: 60%;
+    height: 80%;
+    border-radius: 10px;
+    border: rgba(255, 255, 255);
+    margin: 5%;
+}
+
+.imgDeleteComment{
+    height: 20%;
+    align-self: flex-end;
+}
+
+.divBtnNavengacion{
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    height: 10%;
+    border-radius: 10px;
+    background: rgba(1, 38, 12);;
+    margin: 5%;
+    margin-left: 20%;
+}
+
+.imgUsuario{
+    height: 5%;
+    align-self: flex-start;
+}
+
+.imgCerrar{
+    height: 5%;
+    align-self: flex-end;
 }
