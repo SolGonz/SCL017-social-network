@@ -121,6 +121,19 @@ export const wall = () => {
     imgDeleteComment.className = "imgDeleteComment";
     comentario.appendChild(imgDeleteComment);
 
+    const divBtnNavengacion = document.createElement("div");
+    divBtnNavengacion.className = "divBtnPublicado";
+    fondoMuro.appendChild(divBtnNavengacion);
+
+    const imgUsuario = document.createElement("img");
+    imgUsuario.src ='img/imgUsuario.png';
+    imgUsuario.className = "imgUsuario";
+    divBtnNavengacion.appendChild(imgUsuario);
+    
+    const imgCerrar = document.createElement("img");
+    imgCerrar.src ='img/imgCerrar.png';
+    imgCerrar.className = "imgCerrar";
+    divBtnNavengacion.appendChild(imgCerrar);
 
 
     return mainWall;

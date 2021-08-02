@@ -472,3 +472,24 @@ margen o float
     height: 20%;
     align-self: flex-end;
 }
+
+.divBtnNavengacion{
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    height: 10%;
+    border-radius: 10px;
+    background: rgba(1, 38, 12);;
+    margin: 5%;
+    margin-left: 20%;
+}
+
+.imgUsuario{
+    height: 5%;
+    align-self: flex-start;
+}
+
+.imgCerrar{
+    height: 5%;
+    align-self: flex-end;
+}
