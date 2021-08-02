@@ -3,7 +3,7 @@
 import { route } from "./lib/routes.js";
 
 window.addEventListener("load", () => {
-    route(window.location.hash);
+  route(window.location.hash);
   });
   
   window.addEventListener("hashchange", () => {

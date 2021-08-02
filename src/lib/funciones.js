@@ -17,7 +17,7 @@ firebase.auth()
     var errorMessage = error.message;
     var email = error.email;
     var credential = error.credential;
-    // ...
+    
   });
 };
 
