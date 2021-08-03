@@ -39,7 +39,7 @@ export const wall = () => {
     postearImg.className = "postearImg";
     postear.appendChild(postearImg);
 
-    const inputPostear = document.createElement("input");
+    const inputPostear = document.createElement("textarea");
     inputPostear.className = "inputPostear";
     inputPostear.placeholder = "¿Qué quieres escribir?";
     postear.appendChild(inputPostear)
@@ -62,18 +62,32 @@ export const wall = () => {
     fondoPostPublicado.className = "fondoPostPublicado";
     fondoMuro.appendChild(fondoPostPublicado);
 /* post ya PUBLICADO -- blanco*/
+    const datosReceta = document.createElement("div");
+    datosReceta.className = "datosReceta";
+    const textoReceta = document.createTextNode("Receta");
+    datosReceta.appendChild(textoReceta);
+    const datosNombre = document.createElement("p");
+    datosNombre.className ="datosNombre";
+    const textoNombreR = document.createTextNode("");
+    datosNombre.appendChild(textoNombreR);
+    datosReceta.appendChild(datosNombre);
+    fondoPostPublicado.appendChild(datosReceta);
+
     const postPublicado = document.createElement("div");
     postPublicado.className = "postPublicado";
     fondoPostPublicado.appendChild(postPublicado);
 
+
+
+
     const imgReceta = document.createElement("img");
-    imgReceta.src ='img/imgReceta.png';
+    imgReceta.src ='img/imgReceta.png';        
     imgReceta.className = "imgReceta";
     postPublicado.appendChild(imgReceta);
 
-    const inputTextReceta = document.createElement("input");
+    const inputTextReceta = document.createElement("p");
     inputTextReceta.className = "inputTextReceta";
-    inputTextReceta.placeholder = "Pasta untable de brócoli. Brócoli cocido, un diente de ajo, hierbas aromáticas (usé apio y tomillo), sal, limón y un chorro generoso de aceite. Todo a la Minipimer y listo.";
+    inputTextReceta.innerText = "Pasta untable de brócoli. Brócoli cocido, un diente de ajo, hierbas aromáticas (usé apio y tomillo), sal, limón y un chorro generoso de aceite. Todo a la Minipimer y listo.";
     postPublicado.appendChild(inputTextReceta)
 
     const divBtnPublicado = document.createElement("div");
@@ -83,46 +97,82 @@ export const wall = () => {
     const imgLike = document.createElement("img");
     imgLike.src ='img/imgLike.png';
     imgLike.className = "imgLike";
-    divBtnPublicado.appendChild(imgLike);
+    const btnLike = document.createElement("button");
+    btnLike.className = "btnLike";
+    btnLike.appendChild(imgLike);
+    const txtLike = document.createElement("p");
+    txtLike.innerText = "888 likes";
+    btnLike.appendChild(txtLike);
+    divBtnPublicado.appendChild(btnLike);
 
     const imgDelete = document.createElement("img");
     imgDelete.src ='img/imgDelete.png';
     imgDelete.className = "imgDelete";
-    divBtnPublicado.appendChild(imgDelete);
+    const btnDelete = document.createElement("button");
+    btnDelete.className = "btnDelete";
+    btnDelete.appendChild(imgDelete);
+    const txtDelete = document.createElement("p");
+    txtDelete.innerText = "Borrar";
+    btnDelete.appendChild(txtDelete);
+    divBtnPublicado.appendChild(btnDelete);
     
-    const btnComentar = document.createElement("button");
+    /* const btnComentar = document.createElement("button");
     btnComentar.className = "btnComentar"
     btnComentar.innerText = "Comentar"
-    divBtnPublicado.appendChild(btnComentar);
+    divBtnPublicado.appendChild(btnComentar); */
 
     /* Comentario*/
 
     /*COMENTARIO ----- verde*/
-    const fondoComentario = document.createElement("div");
-    fondoComentario.className = "fondoComentario";
-    fondoMuro.appendChild(fondoComentario);
+    const divComentario = document.createElement("div");
+    divComentario.className = "divComentario";
+    fondoPostPublicado.appendChild(divComentario);
+
+    /*INPUT -------- blanco*/
+    const inputComentario = document.createElement("textarea");
+    inputComentario.placeholder = "Escribe aquí tu comentario...";
+    inputComentario.className = "inputComentario";
+    inputComentario.rows = 3;
+    divComentario.appendChild(inputComentario);
+
+    /*TEXTO COMENTARIOS ----------- negro*/
+    const txtComentario = document.createElement("p")
+    txtComentario.innerText = "Comentarios";
+    txtComentario.className = "txtComentario";
+    divComentario.appendChild(txtComentario);
     
     const comentario = document.createElement("div");
     comentario.className = "comentario";
-    fondoComentario.appendChild(comentario);
+    divComentario.appendChild(comentario);
 
     const imgPerfilComentario = document.createElement("img");
     imgPerfilComentario.src ='img/imgPerfilComentario.png';
     imgPerfilComentario.className = "imgPerfilComentario";
     comentario.appendChild(imgPerfilComentario);
 
-    const inputTextComentario = document.createElement("input");
-    inputTextComentario.className = "inputTextComentario";
-    inputTextComentario.placeholder = "Lo hice y quedó maravillosa!";
-    comentario.appendChild(inputTextComentario)
+    const textosComentario = document.createElement("div")
+    textosComentario.className = "textosComentario"
+    comentario.appendChild(textosComentario);
 
+    const txtAutorComentario = document.createElement("p");
+    txtAutorComentario.className = "txtAutorComentario";
+    txtAutorComentario.innerText = "Sofia Canales Moya";
+    textosComentario.appendChild(txtAutorComentario)
+
+    const inputTextComentario = document.createElement("p");
+    inputTextComentario.className = "inputTextComentario";
+    inputTextComentario.innerText = "Lo hice y quedó maravillosa!";
+    textosComentario.appendChild(inputTextComentario)
+
+    const btnDeleteComment = document.createElement("button");
+    btnDeleteComment.className = "imgDeleteComment";
     const imgDeleteComment = document.createElement("img");
     imgDeleteComment.src ='img/imgDeleteComment.png';
-    imgDeleteComment.className = "imgDeleteComment";
-    comentario.appendChild(imgDeleteComment);
+    btnDeleteComment.appendChild(imgDeleteComment);
+    textosComentario.appendChild(btnDeleteComment);
 
     const divBtnNavengacion = document.createElement("div");
-    divBtnNavengacion.className = "divBtnPublicado";
+    divBtnNavengacion.className = "divBtnNavengacion";
     fondoMuro.appendChild(divBtnNavengacion);
 
     const imgUsuario = document.createElement("img");
