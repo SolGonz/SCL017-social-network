@@ -3,10 +3,6 @@ export const wall = () => {
     mainWall.className = "mainWall";
     const hola = document.createElement("p");
     
-    /*const textoHola = document.createTextNode("soy el muro");
-    hola.appendChild(textoHola);
-    mainWall.appendChild(hola);*/
-    
     const fondoLogoWall = document.createElement("div");
     fondoLogoWall.className = "fondoLogoWall";
     mainWall.appendChild(fondoLogoWall);
@@ -57,84 +53,86 @@ export const wall = () => {
     /* post ya PUBLICADO*/
 
 
-/*post ya PUBLICADO ----- verde*/
-    const fondoPostPublicado = document.createElement("div");
-    fondoPostPublicado.className = "fondoPostPublicado";
-    fondoMuro.appendChild(fondoPostPublicado);
-/* post ya PUBLICADO -- blanco*/
-    const postPublicado = document.createElement("div");
-    postPublicado.className = "postPublicado";
-    fondoPostPublicado.appendChild(postPublicado);
+// /*post ya PUBLICADO ----- verde*/
+//     const fondoPostPublicado = document.createElement("div");
+//     fondoPostPublicado.className = "fondoPostPublicado";
+//     fondoMuro.appendChild(fondoPostPublicado);
+// /* post ya PUBLICADO -- blanco*/
+//     const postPublicado = document.createElement("div");
+//     postPublicado.className = "postPublicado";
+//     fondoPostPublicado.appendChild(postPublicado);
 
-    const imgReceta = document.createElement("img");
-    imgReceta.src ='img/imgReceta.png';
-    imgReceta.className = "imgReceta";
-    postPublicado.appendChild(imgReceta);
+//     const imgReceta = document.createElement("img");
+//     imgReceta.src ='img/imgReceta.png';
+//     imgReceta.className = "imgReceta";
+//     postPublicado.appendChild(imgReceta);
 
-    const inputTextReceta = document.createElement("input");
-    inputTextReceta.className = "inputTextReceta";
-    inputTextReceta.placeholder = "Pasta untable de brócoli. Brócoli cocido, un diente de ajo, hierbas aromáticas (usé apio y tomillo), sal, limón y un chorro generoso de aceite. Todo a la Minipimer y listo.";
-    postPublicado.appendChild(inputTextReceta)
+//     const inputTextReceta = document.createElement("input");
+//     inputTextReceta.className = "inputTextReceta";
+//     inputTextReceta.placeholder = "Pasta untable de brócoli. Brócoli cocido, un diente de ajo, hierbas aromáticas (usé apio y tomillo), sal, limón y un chorro generoso de aceite. Todo a la Minipimer y listo.";
+//     postPublicado.appendChild(inputTextReceta)
 
-    const divBtnPublicado = document.createElement("div");
-    divBtnPublicado.className = "divBtnPublicado";
-    fondoPostPublicado.appendChild(divBtnPublicado);
+//     const divBtnPublicado = document.createElement("div");
+//     divBtnPublicado.className = "divBtnPublicado";
+//     fondoPostPublicado.appendChild(divBtnPublicado);
 
-    const imgLike = document.createElement("img");
-    imgLike.src ='img/imgLike.png';
-    imgLike.className = "imgLike";
-    divBtnPublicado.appendChild(imgLike);
+//     const imgLike = document.createElement("img");
+//     imgLike.src ='img/imgLike.png';
+//     imgLike.className = "imgLike";
+//     divBtnPublicado.appendChild(imgLike);
 
-    const imgDelete = document.createElement("img");
-    imgDelete.src ='img/imgDelete.png';
-    imgDelete.className = "imgDelete";
-    divBtnPublicado.appendChild(imgDelete);
+//     const imgDelete = document.createElement("img");
+//     imgDelete.src ='img/imgDelete.png';
+//     imgDelete.className = "imgDelete";
+//     divBtnPublicado.appendChild(imgDelete);
     
-    const btnComentar = document.createElement("button");
-    btnComentar.className = "btnComentar"
-    btnComentar.innerText = "Comentar"
-    divBtnPublicado.appendChild(btnComentar);
+//     const btnComentar = document.createElement("button");
+//     btnComentar.className = "btnComentar"
+//     btnComentar.innerText = "Comentar"
+//     divBtnPublicado.appendChild(btnComentar);
 
     /* Comentario*/
 
     /*COMENTARIO ----- verde*/
-    const fondoComentario = document.createElement("div");
-    fondoComentario.className = "fondoComentario";
-    fondoMuro.appendChild(fondoComentario);
+    // const fondoComentario = document.createElement("div");
+    // fondoComentario.className = "fondoComentario";
+    // fondoMuro.appendChild(fondoComentario);
     
-    const comentario = document.createElement("div");
-    comentario.className = "comentario";
-    fondoComentario.appendChild(comentario);
+    // const comentario = document.createElement("div");
+    // comentario.className = "comentario";
+    // fondoComentario.appendChild(comentario);
 
-    const imgPerfilComentario = document.createElement("img");
-    imgPerfilComentario.src ='img/imgPerfilComentario.png';
-    imgPerfilComentario.className = "imgPerfilComentario";
-    comentario.appendChild(imgPerfilComentario);
+    // const imgPerfilComentario = document.createElement("img");
+    // imgPerfilComentario.src ='img/imgPerfilComentario.png';
+    // imgPerfilComentario.className = "imgPerfilComentario";
+    // comentario.appendChild(imgPerfilComentario);
 
-    const inputTextComentario = document.createElement("input");
-    inputTextComentario.className = "inputTextComentario";
-    inputTextComentario.placeholder = "Lo hice y quedó maravillosa!";
-    comentario.appendChild(inputTextComentario)
+    // const inputTextComentario = document.createElement("input");
+    // inputTextComentario.className = "inputTextComentario";
+    // inputTextComentario.placeholder = "Lo hice y quedó maravillosa!";
+    // comentario.appendChild(inputTextComentario)
 
-    const imgDeleteComment = document.createElement("img");
-    imgDeleteComment.src ='img/imgDeleteComment.png';
-    imgDeleteComment.className = "imgDeleteComment";
-    comentario.appendChild(imgDeleteComment);
+    // const imgDeleteComment = document.createElement("img");
+    // imgDeleteComment.src ='img/imgDeleteComment.png';
+    // imgDeleteComment.className = "imgDeleteComment";
+    // comentario.appendChild(imgDeleteComment);
 
     const divBtnNavengacion = document.createElement("div");
-    divBtnNavengacion.className = "divBtnPublicado";
-    fondoMuro.appendChild(divBtnNavengacion);
+    divBtnNavengacion.className = "divBarraNavegacion";
+    mainWall.appendChild(divBtnNavengacion);
 
-    const imgUsuario = document.createElement("img");
-    imgUsuario.src ='img/imgUsuario.png';
-    imgUsuario.className = "imgUsuario";
-    divBtnNavengacion.appendChild(imgUsuario);
+    const btnUsuario = document.createElement("button");
+    btnUsuario.className = "imgUsuario";
+    divBtnNavengacion.appendChild(btnUsuario);
     
-    const imgCerrar = document.createElement("img");
-    imgCerrar.src ='img/imgCerrar.png';
-    imgCerrar.className = "imgCerrar";
-    divBtnNavengacion.appendChild(imgCerrar);
+    const btnCerrar = document.createElement("button");
+    btnCerrar.className = "imgCerrar";
+    divBtnNavengacion.appendChild(btnCerrar);
 
+   
+    btnUsuario.addEventListener("click", () => {
+        window.location.href = '#/profile';
+    })
 
     return mainWall;
 }

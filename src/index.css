@@ -292,25 +292,20 @@ body{
 .mainWall{
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
+    background: rgba(192, 220, 168);
 }
     
 .fondoLogoWall{ 
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 20%;
+    height: 15%;
     justify-content: flex-start;
     align-content: center;
-    background: rgba(192, 220, 168);
+
 }
 
-/*.itemImagen{
-    width: 105px;
-    height: 110px;
-    align-self: flex-start;
-margen o float
-}*/
 .imgLogoWall{
     width: 25%;
     margin: 5%;
@@ -328,9 +323,9 @@ margen o float
 .fondoMuro{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center;
-    height: 70%;
+    height: 80%;
     font-family: Tahoma, sans-serif; 
     font-weight: normal;
     color: #1b552c;
@@ -345,68 +340,59 @@ margen o float
     justify-content: center;
     align-content: center;
     background: rgba(1, 38, 12);
-    width: 80%;
-    height: 35%;
+    width: 90%;
+    height: 250px;
     border-radius: 10px;
-    margin: 5%;
+    margin: 2% auto;
 }
 /*frame blanco*/
 .postear{
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
     align-content: center;
     background: rgba(255, 255, 255);
-    height: 100%;
-    border-radius: 10px;
-    margin: 5%;
-    margin-top:15%;
-    margin-right: 5%;
-    
-}
-
-.divBtnPostear {
-    display: flex;
-    justify-content: flex-end;
-    width: 20%;
-    border-radius: 10px;
-    background: rgba(1, 38, 12);;
-    margin: 2%;
-    margin-left: 20%;
+    height: 80%;
+    margin: 2%; 
+    padding: 1%;
 }
 
 .postearImg{
     width: 40%;
+    height: 95%;
     border-radius: 10px;
     border: 2px solid rgba(1, 38, 12);
-    margin: 2%;
-    margin-left: 20%;
     
 }
 
 
 .inputPostear{
     background: #FFFFFF;
-    align-self: flex-end;
-    justify-content: center;
     width: 60%;
-    height: 80%;
+    height: 96%;
     border-radius: 10px;
-    border: rgba(255, 255, 255);
-    margin: 5%;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+}
+.divBtnPostear {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    border-radius: 10px;
 }
 
 .btnPostear{
     background: rgba(151, 195, 103);
     align-self: flex-end;
     color:  rgba(1, 38, 12);
-    height: 30%;
-    width:40%;  
+    height: 26px;
+    width:120px;  
     border-radius: 20px;
+    margin-right: 10px;
+    font-size: 16px;
 }
 
-/*post publicado*/ 
+/* post publicado 
 .fondoPostPublicado{
     display: flex;
     flex-direction: column;
@@ -475,20 +461,20 @@ margen o float
 
 /* COMENTARIO */
 
-.fondoComentario{
+/* .fondoComentario{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     background: rgba(1, 38, 12);
     width: 80%;
-    height: 35%;
-    border-radius: 10px;
+    /* height: 35%; */
+    /* border-radius: 10px;
     margin: 5%;
-}
+} */
 
 /*fondo blanco*/
-.comentario{
+/* .comentario{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -522,25 +508,36 @@ margen o float
 .imgDeleteComment{
     height: 20%;
     align-self: flex-end;
-}
+}   */
+.divBarraNavegacion{
+    width: 100%;
+    height: 5%;
+    background: rgba(1, 38, 12);
+    display: flex;
+    justify-content: space-around;
 
-.divBtnNavengacion{
+}
+/* .divBtnNavengacion{
     display: flex;
     justify-content: flex-end;
-    width: 80%;
+    width: 100%;
     height: 10%;
     border-radius: 10px;
-    background: rgba(1, 38, 12);;
-    margin: 5%;
-    margin-left: 20%;
-}
+} */
 
 .imgUsuario{
-    height: 5%;
-    align-self: flex-start;
+    background-image: url('img/imgUsuario.png');
+    width: 34px;
+    height: 31px;
+    border: none;
+    justify-self: flex-start;
+    cursor: pointer;
 }
 
 .imgCerrar{
-    height: 5%;
-    align-self: flex-end;
+    background-image: url('img/imgCerrar.png');
+    width: 52px;
+    height: 34px;
+    justify-self: flex-end;
+    cursor: pointer;
 }
