@@ -1,6 +1,7 @@
+import { firebaseConfig } from "./inicioDatos.js";
 export const loginGoogle = () =>{
 
-let provider = new firebase.auth.GoogleAuthProvider();
+  let provider = new firebase.auth.GoogleAuthProvider();
 
 firebase.auth()
 .signInWithPopup(provider)
@@ -63,7 +64,7 @@ firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
   });
 };
 
-export const observador = () =>{
+export const observador = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       console.log("existe usuario activo")
@@ -85,3 +86,24 @@ export const observador = () =>{
   });
 
 }
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+
+var db = firebase.firestore();
+
+export const dataBase = () => {
+
+  db.collection("users").add({
+    first: "Ada",
+    last: "Lovelace",
+    born: 1815
+  })
+    .then((docRef) => {
+      console.log("Document written with ID: ", docRef.id);
+    })
+    .catch((error) => {
+      console.error("Error adding document: ", error);
+    });
+};
