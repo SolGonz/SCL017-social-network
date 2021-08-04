@@ -1,4 +1,4 @@
-import { loginGoogle, accederUsuario, observador,dataBase } from '../funciones.js';
+import { loginGoogle, accederUsuario, dataBase} from '../funciones.js';
 
 
 export const login = () => {
@@ -52,7 +52,6 @@ export const login = () => {
     //Boton de acceso con email y contraseña creadas
     btnIniciar.addEventListener('click', () => {
         accederUsuario();
-        observador();
         dataBase();
 
     });    
