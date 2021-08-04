@@ -1,4 +1,4 @@
-import { registrar } from "../funciones.js";
+// import { registrar } from "../funciones.js";
 
 
 export const registro = () => {
