@@ -1,4 +1,4 @@
-import { loginEmail } from "../funciones.js";
+import { registrar } from "../funciones.js";
 
 
 export const registro = () => {
@@ -85,12 +85,12 @@ export const registro = () => {
   
     btnRegistro.addEventListener("click", () => {
         // Obtengo todos los campos que puso la usuaria
-        const displayName = mainRegistro.querySelector(".inputNombre").value;
+        const userName = mainRegistro.querySelector(".inputNombre").value;
         const emailRegistro = mainRegistro.querySelector(".inputCorreoRegistro").value;
         const passwordRegistro = mainRegistro.querySelector(".inputPasswordRegistro").value;
         const dieta = mainRegistro.querySelector(".selectDieta").value;
 
-        loginEmail(emailRegistro, passwordRegistro, displayName);
+        registrar(emailRegistro, passwordRegistro, userName);
         window.location.href = '#/login';
         alert("Ahora ingresa tus datos para acceder a Veggiebook")
 

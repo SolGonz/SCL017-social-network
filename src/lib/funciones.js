@@ -1,10 +1,14 @@
-export const loginGoogle = () =>{
+var db = firebase.firestore();
 
-let provider = new firebase.auth.GoogleAuthProvider();
+
+//Login con google
+export const loginGoogle = () =>{
+const provider = new firebase.auth.GoogleAuthProvider();
 
 firebase.auth()
 .signInWithPopup(provider)
   .then((result) => {
+    
     /** @type {firebase.auth.OAuthCredential} */
     var credential = result.credential;
     var token = credential.accessToken;
@@ -22,20 +26,21 @@ firebase.auth()
 };
 
  // Registro con correo y contraseña
-export const loginEmail = (emailRegistro, passwordRegistro, displayName) => {
+export const registrar = (emailRegistro, passwordRegistro, userName) => {
     firebase.auth().createUserWithEmailAndPassword(emailRegistro, passwordRegistro)
       .then(() => {
          // Obtenemos el usuario creado
-         const user = firebase.auth().currentUser
-        // Actualizamos el perfil del usuario con el nombre que ingresò y su preferencia de dieta de alimentaciòn.
-        user.updateProfile({displayName})
-        .catch((error) => 
-          console.log({ error }))
-          user.sendEmailVerification().then(() => {
-                    alert('Te enviamos un mail de verificacion')
-                }).catch((error) => {
-                    console.log({ error })
-                })
+         const user = firebase.auth().currentUser;
+
+          // Actualizamos el perfil del usuario con el nombre que ingresó
+        user.updateProfile({displayName: userName});
+
+        db.collection("users").add({
+          nombre: "hola",
+          email: "email",
+          idUsuario: "id",
+          fotoUsuario: '/src/img/brocoli.png'
+        })
             })
             .catch((error) => {
                 console.log({ error })
