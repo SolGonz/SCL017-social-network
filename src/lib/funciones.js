@@ -1,40 +1,14 @@
+var db = firebase.firestore();
 
-let db = firebase.firestore();  //llamamos a la base de datos de firestore
 
-
-//función de registro
-export const registrar = (emailRegistro, passwordRegistro, displayName) => {
-  firebase.auth().createUserWithEmailAndPassword(emailRegistro, passwordRegistro)
-    .then(() => {
-      db.collection('users').add({
-        userId: firebase.auth.currentUser.uid,
-        userName: displayName,
-        userEmail: emailRegistro,
-        });
-       // Obtenemos el usuario creado
-       const user = firebase.auth().currentUser
-      // // Actualizamos el perfil del usuario con el nombre que ingresò y su preferencia de dieta de alimentaciòn.
-      // user.updateProfile({displayName})
-      .catch((error) => 
-        console.log({ error }))
-        user.sendEmailVerification().then(() => {
-                  alert('Te enviamos un mail de verificacion')
-              }).catch((error) => {
-                  console.log({ error })
-              })
-          })
-          .catch((error) => {
-              console.log({ error })
-          })
-};
-
-//Acceso con Google
+//Login con google
 export const loginGoogle = () =>{
 const provider = new firebase.auth.GoogleAuthProvider();
 
 firebase.auth()
 .signInWithPopup(provider)
   .then((result) => {
+    
     /** @type {firebase.auth.OAuthCredential} */
     var credential = result.credential;
     var token = credential.accessToken;
@@ -49,7 +23,28 @@ firebase.auth()
   });
 };
 
-//Acesso con correo y contraseña registradas
+ // Registro con correo y contraseña
+export const registrar = (emailRegistro, passwordRegistro, userName) => {
+    firebase.auth().createUserWithEmailAndPassword(emailRegistro, passwordRegistro)
+      .then(() => {
+         // Obtenemos el usuario creado
+         const user = firebase.auth().currentUser;
+
+          // Actualizamos el perfil del usuario con el nombre que ingresó
+        user.updateProfile({displayName: userName});
+
+        db.collection("users").add({
+          nombre: "hola",
+          email: "email",
+          idUsuario: "id",
+          fotoUsuario: '/src/img/brocoli.png'
+        })
+            })
+            .catch((error) => {
+                console.log({ error })
+            })
+};
+
 export const accederUsuario = () =>{
   
   const emailLogin = document.querySelector('.inputMailLogin').value;
@@ -74,17 +69,21 @@ firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
 export const observador = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      console.log("usuario activo");
-      console.log(user.email);
-      console.log(user.displayName);
-      const emailVerified = user.emailVerified;
-      const uid = user.uid;
-      console.log(emailVerified);
+      console.log("usuario activo")
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      var displayName = user.displayName;
+      console.log(displayName);
+      var email = user.email;
+      var emailVerified = user.emailVerified;
+      var photoURL = user.photoURL;
+      var isAnonymus = user.isAnonymus;
+      var uid = user.uid;
+      var providerData = user.providerData;
       console.log(uid);
       // ...
     } else {
-      //usuario no esta logueado
-      console.log("usuaario inactivo")
+      console.log("usuario inactivo")
     }
   });
   observador();
@@ -103,15 +102,4 @@ export const logout = () => {
 
 export const dataBase = () => {
 
-  db.collection("users").add({
-    first: "Ada",
-    last: "Lovelace",
-    born: 1815
-  })
-    .then((docRef) => {
-      console.log("Document written with ID: ", docRef.id);
-    })
-    .catch((error) => {
-      console.error("Error adding document: ", error);
-    });
-};
+}

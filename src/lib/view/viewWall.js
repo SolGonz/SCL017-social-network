@@ -64,16 +64,23 @@ export const wall = () => {
     btnCerrar.className = "imgCerrar";
     divBtnNavengacion.appendChild(btnCerrar);
 
-
-    //Boton para acceder a perfil
     btnUsuario.addEventListener("click", () => {
+        // Obtengo todos los campos que puso la usuaria
         window.location.href = '#/profile';
+
     });
-    //Boton para cerrar sesión
     btnCerrar.addEventListener("click", () => {
-        logout();
+        firebase.auth().signOut()
+        .then(() => {
+            window.location.href = '#/login'
+        });
+    });
+
+
+    btnPostear.addEventListener("click", () =>{
+       console.log("me postearon")
     })
 
-    
+
     return mainWall;
 }
