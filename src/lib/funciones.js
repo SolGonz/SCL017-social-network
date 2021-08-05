@@ -32,8 +32,8 @@ export const registrar = (emailRegistro, passwordRegistro, userName) => {
          // Obtenemos el usuario creado
          const user = firebase.auth().currentUser;
 
-          // Actualizamos el perfil del usuario con el nombre que ingresó
-        user.updateProfile({displayName: userName});
+        //   // Actualizamos el perfil del usuario con el nombre que ingresó
+        // user.updateProfile({displayName: userName});
 
         db.collection("users").add({
           nombre: "hola",
@@ -90,3 +90,4 @@ export const observador = () =>{
   });
 
 }
+

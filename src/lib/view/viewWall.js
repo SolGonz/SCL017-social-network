@@ -1,3 +1,5 @@
+var db = firebase.firestore();
+
 export const wall = () => {
     const mainWall = document.createElement("div");
     mainWall.className = "mainWall";
@@ -61,6 +63,8 @@ export const wall = () => {
     btnCerrar.className = "imgCerrar";
     divBtnNavengacion.appendChild(btnCerrar);
 
+
+
     btnUsuario.addEventListener("click", () => {
         // Obtengo todos los campos que puso la usuaria
         window.location.href = '#/profile';
@@ -73,9 +77,25 @@ export const wall = () => {
         });
     });
 
+    const savePost = (post) =>{
 
-    btnPostear.addEventListener("click", () =>{
-       console.log("me postearon")
+        db.collection('post').doc().set({
+            post,
+          })
+
+    }
+
+
+
+
+    btnPostear.addEventListener("click",  async(e) =>{
+        e.preventDefault();
+        const post = mainWall.querySelector('.inputPostear');
+
+        await savePost(post.value);
+
+        btnPostear.reset();
+
     })
 
 
