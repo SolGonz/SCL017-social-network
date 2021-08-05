@@ -1,4 +1,3 @@
-  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +10,6 @@
   <title>Veggiebook</title>
  </head>
 <body>
-  <div id="root"></div>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
@@ -22,18 +20,20 @@
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
 <script>
-  const firebaseConfig = {
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
     apiKey: "AIzaSyBR5ytaN8RV09i9qV4b4gxUj720zy2q6Kg",
     authDomain: "veggiebookrecipes.firebaseapp.com",
     projectId: "veggiebookrecipes",
     storageBucket: "veggiebookrecipes.appspot.com",
     messagingSenderId: "926850678058",
     appId: "1:926850678058:web:467ea05b2de5d1b3ba7253"
-};
-// Initialize Firebase
-firebase = firebase.initializeApp(firebaseConfig);
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
 </script>
-
   <script type="module" src="main.js"></script>
+  <div id="root"></div>
 </body>
 </html>

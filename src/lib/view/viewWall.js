@@ -1,6 +1,3 @@
-import { logout } from "../funciones.js";
-
-
 export const wall = () => {
     const mainWall = document.createElement("div");
     mainWall.className = "mainWall";
@@ -38,7 +35,7 @@ export const wall = () => {
     postearImg.className = "postearImg";
     postear.appendChild(postearImg);
 
-    const inputPostear = document.createElement("textarea");
+    const inputPostear = document.createElement("input");
     inputPostear.className = "inputPostear";
     inputPostear.placeholder = "¿Qué quieres escribir?";
     postear.appendChild(inputPostear)

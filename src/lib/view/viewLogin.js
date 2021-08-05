@@ -1,4 +1,5 @@
-import { loginGoogle, accederUsuario, dataBase} from '../funciones.js';
+import { loginGoogle, accederUsuario, observador } from '../funciones.js';
+
 
 
 export const login = () => {
@@ -21,7 +22,7 @@ export const login = () => {
     saludo.appendChild(textoSaludo);
     fondoLogo.appendChild(saludo);
 
-    const fondoIniciarSesion = document.createElement("form");
+    const fondoIniciarSesion = document.createElement("div");
     fondoIniciarSesion.className = "fondoIniciar";
     mainLogin.appendChild(fondoIniciarSesion);
 
@@ -41,10 +42,10 @@ export const login = () => {
     const mailPassword = document.createElement("input");
     mailPassword.className = "inputPasswordLogin";
     mailPassword.placeholder = "Ingresa tu contraseña";
-    mailPassword.type = "password";
+    mailPassword.type = "password"
     fondoIniciarSesion.appendChild(mailPassword)
 
-    const btnIniciar = document.createElement("submit");
+    const btnIniciar = document.createElement("button");
     btnIniciar.className = "btnIniciar"
     btnIniciar.innerText = "Acceder"
     fondoIniciarSesion.appendChild(btnIniciar);
@@ -52,7 +53,7 @@ export const login = () => {
     //Boton de acceso con email y contraseña creadas
     btnIniciar.addEventListener('click', () => {
         accederUsuario();
-        dataBase();
+        observador();
 
     });    
 

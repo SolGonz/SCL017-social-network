@@ -12,14 +12,16 @@ firebase.auth()
     /** @type {firebase.auth.OAuthCredential} */
     var credential = result.credential;
     var token = credential.accessToken;
+    // The signed-in user info.
     var user = result.user;
     window.location.href = '#/wall';
   }).catch((error) => {
+    // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
     var email = error.email;
     var credential = error.credential;
-    
+    // ...
   });
 };
 
@@ -55,6 +57,7 @@ firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
     // Signed in
     var user = userCredential.user;
     // ...
+    console.log(user)
     window.location.href = '#/wall'
   })
   .catch((error) => {
@@ -65,8 +68,7 @@ firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
   });
 };
 
-//observador
-export const observador = () => {
+export const observador = () =>{
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       console.log("usuario activo")
@@ -86,20 +88,5 @@ export const observador = () => {
       console.log("usuario inactivo")
     }
   });
-  observador();
-
-}
-
-export const logout = () => {
-  firebase.auth().signOut()
-      .then(() => {
-        window.location.href = '#/login'
-      })
-      .catch((error) => {
-          console.error(error);
-      });
-};
-
-export const dataBase = () => {
 
 }

@@ -59,8 +59,8 @@ export const registro = () => {
     selectDieta.className = "selectDieta";
     selectDieta.id= "selectD";
     const optionCero = document.createElement("option");
-            optionCero.value = 'Dieta';
-            optionCero.text = "Dieta";
+            optionCero.value = 'Selecciona tu dieta';
+            optionCero.text = "Seleciona tu dieta";
             const optionUno = document.createElement("option");
             optionUno.value = 'Vegetariana';
             optionUno.text = "Vegetariana";
@@ -95,7 +95,5 @@ export const registro = () => {
         alert("Ahora ingresa tus datos para acceder a Veggiebook")
 
     });
-
-
     return mainRegistro;
 }
