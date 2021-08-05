@@ -292,8 +292,8 @@ body{
 .mainWall{
     display: flex;
     flex-direction: column;
-    height: 100vh;
     background: rgba(192, 220, 168);
+    height: 100%;
 }
     
 .fondoLogoWall{ 
@@ -336,8 +336,8 @@ body{
 .frameFondoPostear{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-content: center;
+    justify-content: center;
+    align-items: center;
     background: rgba(1, 38, 12);
     width: calc(100% - 24px);
     height: 30%;
@@ -396,6 +396,221 @@ body{
     margin-right: 8px;
     border: 0px;
     font-family: 'Reem Kufi', sans-serif;
+}
+
+/*post publicado*/ 
+.fondoPostPublicado{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(1, 38, 12);
+    width: calc(100% - 24px);
+    border-radius: 10px;
+    margin: 12px;
+    font-family: 'Reem Kufi', sans-serif;
+}
+
+.fondoPostPublicado::after{
+    content: '';
+    margin-bottom: 120px;
+    height: 120px;
+    width: 100%;
+}
+
+.datosReceta{
+    background: #49924F;
+    border-radius: 10px 10px 0 0 ;
+    padding: 0px 8px;
+    color: white;
+}
+
+.postPublicado{
+    display: flex;
+    justify-content: flex-start;
+    background: rgba(255, 255, 255);
+    width: calc(100% - 24px);
+    border-radius: 10px;
+    margin: 12px;
+}
+
+.imgReceta{
+    width: 30%;
+    border-radius: 10px;
+    margin: 2%;
+   
+}
+
+.inputTextReceta{
+    background: #FFFFFF;
+    align-self: center;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+    border-radius: 10px;
+    border: rgba(255, 255, 255);
+    font-size: 14px;
+    line-height: 18px;
+    padding-left: 6px;
+}
+
+.divBtnPublicado{
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 24px);
+    margin: 12px;
+    border-radius: 10px;
+    background: rgba(1, 38, 12);
+    margin-top: 0px;
+}
+
+.divBtnPublicado button{
+    background: #49924F;
+    color: #000;
+    font-family: 'Reem Kufi', sans-serif;
+    max-height: 32px;
+    display: flex;
+    flex-direction: row;
+    max-width: 140px;
+    font-size: 16px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.divBtnPublicado button img {
+    height: 20px;
+    margin-right: 4px;
+    align-self: center;
+    margin-left: 4px;
+}
+
+.divBtnPublicado button p {
+    align-self: center;
+    padding-right: 8px;
+}
+
+button.btnDelete {
+    background: #C46E47;
+}
+
+.btnComentar{
+    background: rgba(151, 195, 103);
+    align-self: flex-end;
+    color:  rgba(1, 38, 12);
+    height: 30%;
+    width:40%;  
+    border-radius: 20px;
+    margin-bottom: 12px;
+    margin-right: 8px;
+    border: 0px;
+    font-family: 'Reem Kufi', sans-serif;
+}
+
+.divBtnNavengacion{
+    position: fixed;
+    bottom: -2px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background: rgba(1, 38, 12);
+    width: 80%;
+    height: 35%;
+    border-radius: 10px;
+    margin: 5%;
+}
+
+/*fondo blanco*/
+.comentario{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    background: transparent;
+    border-radius: 10px;
+    
+    width: calc(100% - 24px);
+    margin: 12px;
+    margin-top: 0px;
+    
+}
+
+.inputComentario{
+    width: calc(100% - 24px - 12px);
+    margin: 0px 12px;
+    border-radius: 5px;
+    padding: 6px;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 16px;
+    opacity: 0.4;
+}
+
+.txtComentario{
+    color: #FFFFFFCC;
+    width: calc(100% - 24px);
+    margin: 0px 12px;
+    line-height: 24px;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.inputComentario:focus{
+    opacity: 1;
+}
+
+.imgPerfilComentario{
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    border: 2px solid rgba(1, 38, 12);
+    z-index: 11;
+}
+
+.textosComentario{
+    background: #C0DCA8;
+    margin-left: -24px;
+    padding-left: 32px;
+    z-index: 10;
+    max-height: 48px;
+    width: calc(100% - 24px);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.txtAutorComentario{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.inputTextComentario{
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 18px;
+    /* justify-content: center;
+    width: 60%;
+    height: 80%;
+    border-radius: 10px;
+    border: rgba(255, 255, 255);
+    margin: 5%; */
+}
+
+.imgDeleteComment{
+    position: absolute;
+    background: transparent;
+    width: 24px;
+    height: 24px;
+    border: 0px;
+    right: 32px;
+}
+
+.imgDeleteComment img{
+    width: 24px;
+    height: 24px;
 }
 
 .divBtnNavengacion{
