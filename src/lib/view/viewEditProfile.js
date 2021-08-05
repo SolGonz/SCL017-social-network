@@ -11,7 +11,7 @@ export const profile = () => {
     mainDatos.appendChild(divFoto);
 
     const imgPerfil = document.createElement("img");
-    imgPerfil.src ='';
+    imgPerfil.src = '';
     imgPerfil.alt = "foto de perfil"
     imgPerfil.className = "imgPerfil";
     imgPerfil.id = "fotoPerfil";
@@ -35,7 +35,7 @@ export const profile = () => {
     btnAtras.innerText = "Vuelve atrás"
     mainProfile.appendChild(btnAtras);
 
-    btnAtras.addEventListener("click", () =>{
+    btnAtras.addEventListener("click", () => {
         window.location.href = '#/wall';
 
     });

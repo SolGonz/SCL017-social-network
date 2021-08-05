@@ -293,6 +293,7 @@ body{
     display: flex;
     flex-direction: column;
     background: rgba(192, 220, 168);
+    height: 100%;
 }
     
 .fondoLogoWall{ 
@@ -305,12 +306,6 @@ body{
 
 }
 
-/*.itemImagen{
-    width: 105px;
-    height: 110px;
-    align-self: flex-start;
-margen o float
-}*/
 .imgLogoWall{
     width: 25%;
     margin: 5%;
@@ -326,9 +321,9 @@ margen o float
 }
 
 .fondoMuro{
-    /* display: flex; */
+    display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center;
     height: 83%;
     font-family: Tahoma, sans-serif; 
@@ -341,8 +336,8 @@ margen o float
 .frameFondoPostear{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-content: center;
+    justify-content: center;
+    align-items: center;
     background: rgba(1, 38, 12);
     width: calc(100% - 24px);
     height: 30%;

@@ -1,4 +1,4 @@
-import { loginEmail } from "../funciones.js";
+import { registrar } from "../funciones.js";
 
 
 export const registro = () => {
@@ -10,7 +10,7 @@ export const registro = () => {
     mainRegistro.appendChild(fondoLogoRegistro);
 
     const itemImg = document.createElement("img");
-    itemImg.src ='img/brocoli.png';
+    itemImg.src = 'img/brocoli.png';
     itemImg.className = "imagen";
     fondoLogoRegistro.appendChild(itemImg);
 
@@ -57,24 +57,24 @@ export const registro = () => {
     textoDieta.className = "textoDieta";
     const selectDieta = document.createElement("select");
     selectDieta.className = "selectDieta";
-    selectDieta.id= "selectD";
+    selectDieta.id = "selectD";
     const optionCero = document.createElement("option");
-            optionCero.value = 'Dieta';
-            optionCero.text = "Dieta";
-            const optionUno = document.createElement("option");
-            optionUno.value = 'Vegetariana';
-            optionUno.text = "Vegetariana";
-            const optionDos = document.createElement("option");
-            optionDos.value = 'Vegana';
-            optionDos.text = "Vegana";
-            const optionTres = document.createElement("option");
-            optionTres.value = 'No me identifico con ninguna';
-            optionTres.text = "No me identifico con ninguna";
-            selectDieta.appendChild(optionCero);
-            selectDieta.appendChild(optionUno);
-            selectDieta.appendChild(optionDos);
-            selectDieta.appendChild(optionTres);
-            fondoRegistrarse.appendChild(selectDieta);
+    optionCero.value = 'Selecciona tu dieta';
+    optionCero.text = "Seleciona tu dieta";
+    const optionUno = document.createElement("option");
+    optionUno.value = 'Vegetariana';
+    optionUno.text = "Vegetariana";
+    const optionDos = document.createElement("option");
+    optionDos.value = 'Vegana';
+    optionDos.text = "Vegana";
+    const optionTres = document.createElement("option");
+    optionTres.value = 'No me identifico con ninguna';
+    optionTres.text = "No me identifico con ninguna";
+    selectDieta.appendChild(optionCero);
+    selectDieta.appendChild(optionUno);
+    selectDieta.appendChild(optionDos);
+    selectDieta.appendChild(optionTres);
+    fondoRegistrarse.appendChild(selectDieta);
 
     mainRegistro.appendChild(fondoRegistrarse);
 
@@ -82,20 +82,17 @@ export const registro = () => {
     btnRegistro.className = "btnRegistro"
     btnRegistro.innerText = "Registrarme"
     fondoRegistrarse.appendChild(btnRegistro);
-  
+
     btnRegistro.addEventListener("click", () => {
         // Obtengo todos los campos que puso la usuaria
-        const displayName = mainRegistro.querySelector(".inputNombre").value;
+        const userName = mainRegistro.querySelector(".inputNombre").value;
         const emailRegistro = mainRegistro.querySelector(".inputCorreoRegistro").value;
         const passwordRegistro = mainRegistro.querySelector(".inputPasswordRegistro").value;
         const dieta = mainRegistro.querySelector(".selectDieta").value;
 
-        loginEmail(emailRegistro, passwordRegistro, displayName);
+        registrar(emailRegistro, passwordRegistro, userName);
         window.location.href = '#/login';
         alert("Ahora ingresa tus datos para acceder a Veggiebook")
-
     });
-
-
     return mainRegistro;
 }
