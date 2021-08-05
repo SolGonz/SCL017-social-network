@@ -71,7 +71,7 @@ firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
 export const observador = () =>{
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      console.log("existe usuario activo")
+      console.log("usuario activo")
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
       var displayName = user.displayName;
@@ -85,7 +85,7 @@ export const observador = () =>{
       console.log(uid);
       // ...
     } else {
-      console.log("no existe usuario activo")
+      console.log("usuario inactivo")
     }
   });
 

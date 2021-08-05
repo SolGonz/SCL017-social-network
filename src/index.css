@@ -8,7 +8,7 @@ body{
     background: #FCFCFB;
 }
 #root{
-    height: 100%;
+    height: 100vh;
 }
 /* Vista Login */
 .mainLogin{
@@ -235,12 +235,64 @@ body{
     align-self: center;
     
 }
+/* Vista Profile */
+.mainProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #EFF7EF;
+}
+.mainDatos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #C0DCA8;
+    width: 90%;
+    border-radius: 9px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 
+}
+/* .divFotos{
+   
+} */
+.imgPerfil{
+    width: 100px;
+    height: 100px;
+}
+.divNombre{
+    background: #01260C;
+    width: 90%;
+    height: 100px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+.divIntereses{
+    background: #01260C;
+    width: 90%;
+    height: 100px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.btnAtras{
+    background: rgba(73, 146, 79, 0.88);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    color: #FFF;
+    width: 150px;
+    height: 32px;
+    border: 0px;
+    margin-top: 30px;
+    cursor:pointer;
+}
 /* Vista Wall */
 
 .mainWall{
     display: flex;
     flex-direction: column;
+    background: rgba(192, 220, 168);
     height: 100%;
 }
     
@@ -248,18 +300,12 @@ body{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 20%;
+    height: 12%;
     justify-content: flex-start;
     align-content: center;
-    background: rgba(192, 220, 168);
+
 }
 
-/*.itemImagen{
-    width: 105px;
-    height: 110px;
-    align-self: flex-start;
-margen o float
-}*/
 .imgLogoWall{
     width: 25%;
     margin: 5%;
@@ -277,27 +323,26 @@ margen o float
 .fondoMuro{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center;
-    height: 70%;
+    height: 83%;
     font-family: Tahoma, sans-serif; 
     font-weight: normal;
     color: #1b552c;
     font-size: 18px;
     line-height: 2.5;
-    background: rgba(192, 220, 168);
 }
 /*frame verde oscuro*/
 .frameFondoPostear{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     background: rgba(1, 38, 12);
-    width: 80%;
-    height: 35%;
+    width: calc(100% - 24px);
+    height: 30%;
     border-radius: 10px;
-    margin: 5%;
+    margin: 12px;
 }
 /*frame blanco*/
 .postear{
@@ -307,22 +352,16 @@ margen o float
     justify-content: flex-start;
     align-content: center;
     background: rgba(255, 255, 255);
-    height: 100%;
+    height: 120px;
     border-radius: 10px;
-    margin: 5%;
-    margin-top:15%;
-    margin-right: 5%;
-    
+    margin: 12px;
+    margin-top: 16px;
 }
 
 .divBtnPostear {
     display: flex;
     justify-content: flex-end;
-    width: 20%;
-    border-radius: 10px;
-    background: rgba(1, 38, 12);;
-    margin: 2%;
-    margin-left: 20%;
+    width: 100%;
 }
 
 .postearImg{
@@ -330,7 +369,6 @@ margen o float
     border-radius: 10px;
     border: 2px solid rgba(1, 38, 12);
     margin: 2%;
-    margin-left: 20%;
     
 }
 
@@ -340,19 +378,24 @@ margen o float
     align-self: flex-end;
     justify-content: center;
     width: 60%;
-    height: 80%;
+    height: calc(100% - 16px);
     border-radius: 10px;
     border: rgba(255, 255, 255);
-    margin: 5%;
+    margin: 0px;
+    padding: 8px;
 }
 
 .btnPostear{
     background: rgba(151, 195, 103);
     align-self: flex-end;
     color:  rgba(1, 38, 12);
-    height: 30%;
+    height: 24px;
     width:40%;  
     border-radius: 20px;
+    margin-bottom: 12px;
+    margin-right: 8px;
+    border: 0px;
+    font-family: 'Reem Kufi', sans-serif;
 }
 
 /*post publicado*/ 
@@ -361,18 +404,33 @@ margen o float
     flex-direction: column;
     justify-content: center;
     background: rgba(1, 38, 12);
-    width: 80%;
+    width: calc(100% - 24px);
     border-radius: 10px;
-    margin: 5%;
+    margin: 12px;
+    font-family: 'Reem Kufi', sans-serif;
+}
+
+.fondoPostPublicado::after{
+    content: '';
+    margin-bottom: 120px;
+    height: 120px;
+    width: 100%;
+}
+
+.datosReceta{
+    background: #49924F;
+    border-radius: 10px 10px 0 0 ;
+    padding: 0px 8px;
+    color: white;
 }
 
 .postPublicado{
     display: flex;
     justify-content: flex-start;
     background: rgba(255, 255, 255);
-    width: 80%;
+    width: calc(100% - 24px);
     border-radius: 10px;
-    margin: 5%;
+    margin: 12px;
 }
 
 .imgReceta{
@@ -384,23 +442,54 @@ margen o float
 
 .inputTextReceta{
     background: #FFFFFF;
-    align-self: flex-end;
+    align-self: center;
     justify-content: center;
     width: 60%;
-    height: 80%;
+    height: 100%;
     border-radius: 10px;
     border: rgba(255, 255, 255);
-    margin: 5%;
+    font-size: 14px;
+    line-height: 18px;
+    padding-left: 6px;
 }
 
 .divBtnPublicado{
     display: flex;
-    justify-content: flex-end;
-    width: 80%;
+    justify-content: space-between;
+    width: calc(100% - 24px);
+    margin: 12px;
     border-radius: 10px;
-    background: rgba(1, 38, 12);;
-    margin: 5%;
-    margin-left: 20%;
+    background: rgba(1, 38, 12);
+    margin-top: 0px;
+}
+
+.divBtnPublicado button{
+    background: #49924F;
+    color: #000;
+    font-family: 'Reem Kufi', sans-serif;
+    max-height: 32px;
+    display: flex;
+    flex-direction: row;
+    max-width: 140px;
+    font-size: 16px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.divBtnPublicado button img {
+    height: 20px;
+    margin-right: 4px;
+    align-self: center;
+    margin-left: 4px;
+}
+
+.divBtnPublicado button p {
+    align-self: center;
+    padding-right: 8px;
+}
+
+button.btnDelete {
+    background: #C46E47;
 }
 
 .btnComentar{
@@ -442,54 +531,120 @@ margen o float
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    background: rgba(255, 255, 255);
+    background: transparent;
     border-radius: 10px;
-    margin: 5%;
-    margin-right: 5%;
-      
-}
-
-.imgPerfilComentario{
-    width: 30%;
-    border-radius: 100%;
-    border: 2px solid rgba(1, 38, 12);
-    margin: 2%;
-    margin-left: 20%;
+    
+    width: calc(100% - 24px);
+    margin: 12px;
+    margin-top: 0px;
     
 }
 
-.inputTextComentario{
-    background: #FFFFFF;
+.inputComentario{
+    width: calc(100% - 24px - 12px);
+    margin: 0px 12px;
+    border-radius: 5px;
+    padding: 6px;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 16px;
+    opacity: 0.4;
+}
+
+.txtComentario{
+    color: #FFFFFFCC;
+    width: calc(100% - 24px);
+    margin: 0px 12px;
+    line-height: 24px;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.inputComentario:focus{
+    opacity: 1;
+}
+
+.imgPerfilComentario{
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    border: 2px solid rgba(1, 38, 12);
+    z-index: 11;
+}
+
+.textosComentario{
+    background: #C0DCA8;
+    margin-left: -24px;
+    padding-left: 32px;
+    z-index: 10;
+    max-height: 48px;
+    width: calc(100% - 24px);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+}
+
+.txtAutorComentario{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.inputTextComentario{
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 18px;
+    /* justify-content: center;
     width: 60%;
     height: 80%;
     border-radius: 10px;
     border: rgba(255, 255, 255);
-    margin: 5%;
+    margin: 5%; */
 }
 
 .imgDeleteComment{
-    height: 20%;
-    align-self: flex-end;
+    position: absolute;
+    background: transparent;
+    width: 24px;
+    height: 24px;
+    border: 0px;
+    right: 32px;
+}
+
+.imgDeleteComment img{
+    width: 24px;
+    height: 24px;
 }
 
 .divBtnNavengacion{
+    position: fixed;
+    bottom: -2px;
+    z-index: 1000;
     display: flex;
-    justify-content: flex-end;
-    width: 80%;
-    height: 10%;
-    border-radius: 10px;
-    background: rgba(1, 38, 12);;
-    margin: 5%;
-    margin-left: 20%;
+    justify-content: space-around;
+    width: 100%;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background: rgba(1, 38, 12);
+    padding: 8px;
+    height: 5%;
 }
 
 .imgUsuario{
-    height: 5%;
-    align-self: flex-start;
-}
+    height: 32px;
+    width: 34px;
+    border-radius: 100%;
+    border: none;
+    background-image: url('img/imgUsuario.png');
+    background-repeat: no-repeat;
+    cursor:pointer;
 
+}
 .imgCerrar{
-    height: 5%;
-    align-self: flex-end;
+    width: 48px;
+    height: 32px;
+    border: none;
+    background-image: url('img/imgCerrar.png');
+    cursor: pointer;
 }
