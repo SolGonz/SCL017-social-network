@@ -1,3 +1,5 @@
+
+
 var db = firebase.firestore();
 
 export const wall = () => {
@@ -28,7 +30,7 @@ export const wall = () => {
     frameFondoPostear.className = "frameFondoPostear";
     fondoMuro.appendChild(frameFondoPostear);
 /* frame blanco*/
-    const postear = document.createElement("div");
+    const postear = document.createElement("form");
     postear.className = "postear";
     frameFondoPostear.appendChild(postear);
 
@@ -39,17 +41,15 @@ export const wall = () => {
 
     const inputPostear = document.createElement("input");
     inputPostear.className = "inputPostear";
+    inputPostear.type = "text"
     inputPostear.placeholder = "¿Qué quieres escribir?";
     postear.appendChild(inputPostear)
     
-    const divBtnPostear = document.createElement("div");
-    divBtnPostear.className = "divBtnPostear";
-    frameFondoPostear.appendChild(divBtnPostear);
 
     const btnPostear = document.createElement("button");
     btnPostear.className = "btnPostear"
     btnPostear.innerText = "Postear"
-    divBtnPostear.appendChild(btnPostear);
+    postear.appendChild(btnPostear);
 
     const divBtnNavengacion = document.createElement("div");
     divBtnNavengacion.className = "divBtnNavengacion";
@@ -62,6 +62,11 @@ export const wall = () => {
     const btnCerrar = document.createElement("button");
     btnCerrar.className = "imgCerrar";
     divBtnNavengacion.appendChild(btnCerrar);
+
+    const postContainer = document.createElement("div");
+    postContainer.className = "postContainer";
+    postContainer.id = "postContainer";
+    fondoMuro.appendChild(postContainer);
 
 
 
@@ -77,27 +82,32 @@ export const wall = () => {
         });
     });
 
-    const savePost = (post) =>{
-
-        db.collection('post').doc().set({
-            post,
-          })
-
-    }
 
 
-
-
-    btnPostear.addEventListener("click",  async(e) =>{
+    //comenzamos con las funciones de post
+    postear.addEventListener('submit',  async(e) =>{
         e.preventDefault();
-        const post = mainWall.querySelector('.inputPostear');
+        const postMessage = mainWall.querySelector('.inputPostear');
+        await savePost(postMessage.value);
+       postear.reset();
+  
+    });
 
-        await savePost(post.value);
+    //guardando post en la coleccion de firebase
+    const savePost = (postMessage ) =>
+        db.collection('post').doc().set({
+            post: postMessage,
+        });  
 
-        btnPostear.reset();
-
-    })
-
+    //obtener collecion de post e ir pintando en postContainer
+    const getPost = () => db.collection('post').onSnapshot((querySnapshot) =>{
+        postContainer.innerHTML = '';
+        querySnapshot.forEach((doc) => {
+            console.log(`${doc.id} => ${doc.data().post}`);
+            postContainer.innerHTML += `<p>${doc.data().post}</p>`
+        });
+    });
+    getPost();
 
     return mainWall;
 }

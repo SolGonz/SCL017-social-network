@@ -326,12 +326,13 @@ body{
    flex-direction: column;
    justify-content: flex-start;
    align-content: center;
+   margin: auto;
    height: 83%;
+   width: 100%;
    font-family: Tahoma, sans-serif; 
    font-weight: normal;
    color: #1b552c;
    font-size: 18px;
-   line-height: 2.5;
 }
 /*frame verde oscuro*/
 .frameFondoPostear{
@@ -340,50 +341,34 @@ body{
    justify-content: center;
    align-items: center;
    background: rgba(1, 38, 12);
-   width: calc(100% - 24px);
-   height: 30%;
+   width: 90%;
    border-radius: 10px;
-   margin: 12px;
+   margin: 1% auto;
 }
 /*frame blanco*/
 .postear{
    display: flex;
-   flex-direction: row;
-   flex-wrap: nowrap;
-   justify-content: flex-start;
+   flex-direction: column;
+   justify-content: center;
    align-content: center;
-   background: rgba(255, 255, 255);
-   height: 120px;
+   width: 90%;
    border-radius: 10px;
-   margin: 12px;
-   margin-top: 16px;
+   margin: 1.5%;
 }
-
-.divBtnPostear {
-   display: flex;
-   justify-content: flex-end;
-   width: 100%;
-}
-
 .postearImg{
-   width: 40%;
+   width: 100%;
    border-radius: 10px;
-   border: 2px solid rgba(1, 38, 12);
-   margin: 2%;
-   
+   border: 2px solid rgba(1, 38, 12);  
 }
-
 
 .inputPostear{
    background: #FFFFFF;
-   align-self: flex-end;
-   justify-content: center;
-   width: 60%;
-   height: calc(100% - 16px);
+   width: 98%;
+   height: 50px;
    border-radius: 10px;
    border: rgba(255, 255, 255);
-   margin: 0px;
-   padding: 8px;
+   margin: 1% 0;
+   padding: 5px;
 }
 
 .btnPostear{
@@ -393,10 +378,9 @@ body{
    height: 24px;
    width:40%;  
    border-radius: 20px;
-   margin-bottom: 12px;
-   margin-right: 8px;
-   border: 0px;
+   border: none;
    font-family: 'Reem Kufi', sans-serif;
+   margin: 1%;
 }
 
 /*post publicado*/ 

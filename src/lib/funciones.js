@@ -8,12 +8,15 @@ const provider = new firebase.auth.GoogleAuthProvider();
 firebase.auth()
 .signInWithPopup(provider)
   .then((result) => {
-    
-    /** @type {firebase.auth.OAuthCredential} */
-    var credential = result.credential;
-    var token = credential.accessToken;
-    // The signed-in user info.
-    var user = result.user;
+    const user = result.user;
+
+    db.collection("users").add({
+      nombre: user.displayName,
+      email: user.email,
+      idUsuario: user.uid,
+      fotoUsuario: user.photoURL,
+    })
+
     window.location.href = '#/wall';
   }).catch((error) => {
     // Handle Errors here.
@@ -21,6 +24,7 @@ firebase.auth()
     var errorMessage = error.message;
     var email = error.email;
     var credential = error.credential;
+    alert(errorCode, errorMessage, email, credential)
     // ...
   });
 };
@@ -30,23 +34,19 @@ export const registrar = (emailRegistro, passwordRegistro, userName) => {
     firebase.auth().createUserWithEmailAndPassword(emailRegistro, passwordRegistro)
       .then(() => {
          // Obtenemos el usuario creado
-         const user = firebase.auth().currentUser;
-
-        //   // Actualizamos el perfil del usuario con el nombre que ingresó
-        // user.updateProfile({displayName: userName});
-
-        db.collection("users").add({
-          nombre: "hola",
-          email: "email",
-          idUsuario: "id",
-          fotoUsuario: '/src/img/brocoli.png'
-        })
+         const user = firebase.auth().currentUser
+         db.collection("users").add({
+             nombre: userName,
+             email: emailRegistro,
+             idUsuario: user.uid,
+             fotoUsuario: '/src/img/brocoli.png'
+           })
             })
             .catch((error) => {
                 console.log({ error })
             })
 };
-
+//Login para acceder al muro
 export const accederUsuario = () =>{
   
   const emailLogin = document.querySelector('.inputMailLogin').value;
