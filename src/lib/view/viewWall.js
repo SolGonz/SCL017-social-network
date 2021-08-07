@@ -10,6 +10,20 @@ export const wall = () => {
     const fondoLogoWall = document.createElement("div");
     fondoLogoWall.className = "fondoLogoWall";
     mainWall.appendChild(fondoLogoWall);
+
+        //Barra de navegación desktop
+        const barraNavDesktop = document.createElement("div");
+        barraNavDesktop.className = "NavDesktop";
+        fondoLogoWall.appendChild(barraNavDesktop);
+    
+        const btnUsuarioDesk = document.createElement("button");
+        btnUsuarioDesk.className = "imgUsuarioDesk";
+        barraNavDesktop.appendChild(btnUsuarioDesk);
+        
+        const btnCerrarDesk = document.createElement("button");
+        btnCerrarDesk.className = "imgCerrarDesk";
+        barraNavDesktop.appendChild(btnCerrarDesk);
+
     
     const imgLogoWall = document.createElement("img");
     imgLogoWall.src ='img/brocoli.png';
@@ -51,18 +65,7 @@ export const wall = () => {
     btnPostear.innerText = "Postear"
     postear.appendChild(btnPostear);
 
-    const divBtnNavengacion = document.createElement("div");
-    divBtnNavengacion.className = "divBtnNavengacion";
-    mainWall.appendChild(divBtnNavengacion);
-
-    const btnUsuario = document.createElement("button");
-    btnUsuario.className = "imgUsuario";
-    divBtnNavengacion.appendChild(btnUsuario);
-    
-    const btnCerrar = document.createElement("button");
-    btnCerrar.className = "imgCerrar";
-    divBtnNavengacion.appendChild(btnCerrar);
-
+    //contenedor de los post
     const postContainer = document.createElement("div");
     postContainer.className = "postContainer";
     postContainer.id = "postContainer";
@@ -70,27 +73,17 @@ export const wall = () => {
 
 
 
-    btnUsuario.addEventListener("click", () => {
-        // Obtengo todos los campos que puso la usuaria
-        window.location.href = '#/profile';
-
-    });
-    btnCerrar.addEventListener("click", () => {
-        firebase.auth().signOut()
-        .then(() => {
-            window.location.href = '#/login'
-        });
-    });
-
-
-
     //comenzamos con las funciones de post
     postear.addEventListener('submit',  async(e) =>{
         e.preventDefault();
         const postMessage = mainWall.querySelector('.inputPostear');
-        await savePost(postMessage.value);
-       postear.reset();
-  
+        if (postMessage.value === "") {
+            alert("Debes escribir tu receta antes de enviar el post")
+        }     
+        else {
+            await savePost(postMessage.value);
+             postear.reset();
+        }
     });
 
     //guardando post en la coleccion de firebase
@@ -104,10 +97,44 @@ export const wall = () => {
         postContainer.innerHTML = '';
         querySnapshot.forEach((doc) => {
             console.log(`${doc.id} => ${doc.data().post}`);
-            postContainer.innerHTML += `<p>${doc.data().post}</p>`
+            postContainer.innerHTML += `
+            <div class="container-post">
+                <div class="container-receta">    
+                    <p>${doc.data().post}</p>        
+                </div>
+                <button>Hola</button>
+                <button>Adios</button>
+            </div>  ` 
         });
     });
-    getPost();
+     getPost();
+
+
+
+    //Barra de navegación inferior
+    const divBtnNavengacion = document.createElement("div");
+    divBtnNavengacion.className = "divBtnNavengacion";
+    fondoMuro.appendChild(divBtnNavengacion);
+
+    const btnUsuario = document.createElement("button");
+    btnUsuario.className = "imgUsuario";
+    divBtnNavengacion.appendChild(btnUsuario);
+    
+    const btnCerrar = document.createElement("button");
+    btnCerrar.className = "imgCerrar";
+    divBtnNavengacion.appendChild(btnCerrar);
+
+    btnUsuario.addEventListener("click", () => {
+        // Obtengo todos los campos que puso la usuaria
+        window.location.href = '#/profile';
+
+    });
+    btnCerrar.addEventListener("click", () => {
+        firebase.auth().signOut()
+        .then(() => {
+            window.location.href = '#/login'
+        });
+    });
 
     return mainWall;
 }

@@ -5,11 +5,12 @@
    padding: 0;
 }
 body{
-   height: 100vh;
+   height: 100%;
    background: #FCFCFB;
 }
 #root{
-   height: 100vh;
+   height: 100%;
+   background: rgba(148, 195, 103, 0.52);
 }
 /* Vista Login */
 .mainLogin{
@@ -256,9 +257,7 @@ body{
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 
 }
-/* .divFotos{
-  
-} */
+
 .imgPerfil{
    width: 100px;
    height: 100px;
@@ -330,9 +329,7 @@ body{
    height: 83%;
    width: 100%;
    font-family: Tahoma, sans-serif; 
-   font-weight: normal;
    color: #1b552c;
-   font-size: 18px;
 }
 /*frame verde oscuro*/
 .frameFondoPostear{
@@ -369,6 +366,7 @@ body{
    border: rgba(255, 255, 255);
    margin: 1% 0;
    padding: 5px;
+   font-size: 18px;
 }
 
 .btnPostear{
@@ -382,235 +380,15 @@ body{
    font-family: 'Reem Kufi', sans-serif;
    margin: 1%;
 }
-
-/*post publicado*/ 
-.fondoPostPublicado{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   background: rgba(1, 38, 12);
-   width: calc(100% - 24px);
-   border-radius: 10px;
-   margin: 12px;
-   font-family: 'Reem Kufi', sans-serif;
-}
-
-.fondoPostPublicado::after{
-   content: '';
-   margin-bottom: 120px;
-   height: 120px;
-   width: 100%;
-}
-
-.datosReceta{
-   background: #49924F;
-   border-radius: 10px 10px 0 0 ;
-   padding: 0px 8px;
-   color: white;
-}
-
-.postPublicado{
-   display: flex;
-   justify-content: flex-start;
-   background: rgba(255, 255, 255);
-   width: calc(100% - 24px);
-   border-radius: 10px;
-   margin: 12px;
-}
-
-.imgReceta{
-   width: 30%;
-   border-radius: 10px;
-   margin: 2%;
-  
-}
-
-.inputTextReceta{
-   background: #FFFFFF;
-   align-self: center;
-   justify-content: center;
-   width: 60%;
-   height: 100%;
-   border-radius: 10px;
-   border: rgba(255, 255, 255);
-   font-size: 14px;
-   line-height: 18px;
-   padding-left: 6px;
-}
-
-.divBtnPublicado{
-   display: flex;
-   justify-content: space-between;
-   width: calc(100% - 24px);
-   margin: 12px;
-   border-radius: 10px;
-   background: rgba(1, 38, 12);
-   margin-top: 0px;
-}
-
-.divBtnPublicado button{
-   background: #49924F;
-   color: #000;
-   font-family: 'Reem Kufi', sans-serif;
-   max-height: 32px;
-   display: flex;
-   flex-direction: row;
-   max-width: 140px;
-   font-size: 16px;
-   border: 0px;
-   border-radius: 5px;
-}
-
-.divBtnPublicado button img {
-   height: 20px;
-   margin-right: 4px;
-   align-self: center;
-   margin-left: 4px;
-}
-
-.divBtnPublicado button p {
-   align-self: center;
-   padding-right: 8px;
-}
-
-button.btnDelete {
-   background: #C46E47;
-}
-
-.btnComentar{
-   background: rgba(151, 195, 103);
-   align-self: flex-end;
-   color:  rgba(1, 38, 12);
-   height: 30%;
-   width:40%;  
-   border-radius: 20px;
-}
-
-.imgLike{
-   height: 20%;
-   align-self: flex-end;
-}
-
-.imgDelete{
-   height: 20%;
-   align-self: flex-end;
-}
-
-/* COMENTARIO */
-
-.fondoComentario{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-content: center;
-   background: rgba(1, 38, 12);
-   width: 80%;
-   height: 35%;
-   border-radius: 10px;
-   margin: 5%;
-}
-
-/*fondo blanco*/
-.comentario{
-   display: flex;
-   flex-direction: row;
-   flex-wrap: nowrap;
-   justify-content: flex-start;
-   background: transparent;
-   border-radius: 10px;
-   
-   width: calc(100% - 24px);
-   margin: 12px;
-   margin-top: 0px;
-   
-}
-
-.inputComentario{
-   width: calc(100% - 24px - 12px);
-   margin: 0px 12px;
-   border-radius: 5px;
-   padding: 6px;
-   font-family: 'Reem Kufi', sans-serif;
-   font-size: 16px;
-   opacity: 0.4;
-}
-
-.txtComentario{
-   color: #FFFFFFCC;
-   width: calc(100% - 24px);
-   margin: 0px 12px;
-   line-height: 24px;
-   font-size: 16px;
-   margin-bottom: 16px;
-}
-
-.inputComentario:focus{
-   opacity: 1;
-}
-
-.imgPerfilComentario{
-   width: 48px;
-   height: 48px;
-   border-radius: 100%;
-   border: 2px solid rgba(1, 38, 12);
-   z-index: 11;
-}
-
-.textosComentario{
-   background: #C0DCA8;
-   margin-left: -24px;
-   padding-left: 32px;
-   z-index: 10;
-   max-height: 48px;
-   width: calc(100% - 24px);
-   border-top-right-radius: 10px;
-   border-bottom-right-radius: 10px;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-}
-
-.txtAutorComentario{
-   font-weight: bold;
-   font-size: 14px;
-   line-height: 16px;
-}
-
-.inputTextComentario{
-   font-weight: 300;
-   font-size: 17px;
-   line-height: 18px;
-   /* justify-content: center;
-   width: 60%;
-   height: 80%;
-   border-radius: 10px;
-   border: rgba(255, 255, 255);
-   margin: 5%; */
-}
-
-.imgDeleteComment{
-   position: absolute;
-   background: transparent;
-   width: 24px;
-   height: 24px;
-   border: 0px;
-   right: 32px;
-}
-
-.imgDeleteComment img{
-   width: 24px;
-   height: 24px;
+.NavDesktop{
+   display: none;
 }
 
 .divBtnNavengacion{
-   position: fixed;
-   bottom: -2px;
-   z-index: 1000;
    display: flex;
+   align-self: flex-end;
    justify-content: space-around;
    width: 100%;
-   border-bottom-left-radius: 0px;
-   border-bottom-right-radius: 0px;
    background: rgba(1, 38, 12);
    padding: 8px;
    height: 5%;
@@ -633,3 +411,24 @@ button.btnDelete {
    background-image: url('img/imgCerrar.png');
    cursor: pointer;
 }
+.postContainer{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 8px;
+}
+.container-post{
+   width: 90%;
+   margin: 5px;
+   padding: 5px;
+   background-color: rgba(1, 38, 12);
+   border-radius: 5px;
+}
+.container-receta{
+   background: white;
+   height: auto;
+   text-align: center;
+   border-radius: 5px;
+}
+
