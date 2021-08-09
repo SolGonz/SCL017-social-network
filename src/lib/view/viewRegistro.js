@@ -93,6 +93,7 @@ export const registro = () => {
         registrar(emailRegistro, passwordRegistro, userName);
         window.location.href = '#/login';
         alert("Ahora ingresa tus datos para acceder a Veggiebook")
+
     });
     return mainRegistro;
 }
