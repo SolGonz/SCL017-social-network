@@ -1,3 +1,6 @@
+
+var db = firebase.firestore();
+
 export const wall = () => {
     const mainWall = document.createElement("div");
     mainWall.className = "mainWall";
@@ -7,6 +10,20 @@ export const wall = () => {
     fondoLogoWall.className = "fondoLogoWall";
     mainWall.appendChild(fondoLogoWall);
 
+        //Barra de navegación desktop
+        const barraNavDesktop = document.createElement("div");
+        barraNavDesktop.className = "NavDesktop";
+        fondoLogoWall.appendChild(barraNavDesktop);
+    
+        const btnUsuarioDesk = document.createElement("button");
+        btnUsuarioDesk.className = "imgUsuarioDesk";
+        barraNavDesktop.appendChild(btnUsuarioDesk);
+        
+        const btnCerrarDesk = document.createElement("button");
+        btnCerrarDesk.className = "imgCerrarDesk";
+        barraNavDesktop.appendChild(btnCerrarDesk);
+
+    
     const imgLogoWall = document.createElement("img");
     imgLogoWall.src = 'img/brocoli.png';
     imgLogoWall.className = "imgLogoWall";
@@ -25,8 +42,8 @@ export const wall = () => {
     const frameFondoPostear = document.createElement("div");
     frameFondoPostear.className = "frameFondoPostear";
     fondoMuro.appendChild(frameFondoPostear);
-    /* frame blanco*/
-    const postear = document.createElement("div");
+/* frame blanco*/
+    const postear = document.createElement("form");
     postear.className = "postear";
     frameFondoPostear.appendChild(postear);
 
@@ -37,21 +54,66 @@ export const wall = () => {
 
     const inputPostear = document.createElement("input");
     inputPostear.className = "inputPostear";
+    inputPostear.type = "text"
     inputPostear.placeholder = "¿Qué quieres escribir?";
     postear.appendChild(inputPostear)
-
-    const divBtnPostear = document.createElement("div");
-    divBtnPostear.className = "divBtnPostear";
-    frameFondoPostear.appendChild(divBtnPostear);
+    
 
     const btnPostear = document.createElement("button");
     btnPostear.className = "btnPostear"
     btnPostear.innerText = "Postear"
-    divBtnPostear.appendChild(btnPostear);
+    postear.appendChild(btnPostear);
 
+    //contenedor de los post
+    const postContainer = document.createElement("div");
+    postContainer.className = "postContainer";
+    postContainer.id = "postContainer";
+    fondoMuro.appendChild(postContainer);
+
+
+
+    //comenzamos con las funciones de post
+    postear.addEventListener('submit',  async(e) =>{
+        e.preventDefault();
+        const postMessage = mainWall.querySelector('.inputPostear');
+        if (postMessage.value === "") {
+            alert("Debes escribir tu receta antes de enviar el post")
+        }     
+        else {
+            await savePost(postMessage.value);
+             postear.reset();
+        }
+    });
+
+    //guardando post en la coleccion de firebase
+    const savePost = (postMessage ) =>
+        db.collection('post').doc().set({
+            post: postMessage,
+        });  
+
+    //obtener collecion de post e ir pintando en postContainer
+    const getPost = () => db.collection('post').onSnapshot((querySnapshot) =>{
+        postContainer.innerHTML = '';
+        querySnapshot.forEach((doc) => {
+            console.log(`${doc.id} => ${doc.data().post}`);
+            postContainer.innerHTML += `
+            <div class="container-post">
+                <div class="container-receta">    
+                    <p>${doc.data().post}</p>        
+                </div>
+                <button>Hola</button>
+                <button>Adios</button>
+            </div>  ` 
+        });
+    });
+     getPost();
+
+
+
+    //Barra de navegación inferior
     const divBtnNavengacion = document.createElement("div");
     divBtnNavengacion.className = "divBtnNavengacion";
-    mainWall.appendChild(divBtnNavengacion);
+    fondoMuro.appendChild(divBtnNavengacion);
 
     const btnUsuario = document.createElement("button");
     btnUsuario.className = "imgUsuario";
@@ -72,12 +134,6 @@ export const wall = () => {
                 window.location.href = '#/login'
             });
     });
-
-
-    btnPostear.addEventListener("click", () => {
-        console.log("me postearon")
-    })
-
 
     return mainWall;
 }

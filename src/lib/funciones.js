@@ -5,50 +5,50 @@ var db = firebase.firestore();
 export const loginGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
 
-  firebase.auth()
-    .signInWithPopup(provider)
-    .then((result) => {
+firebase.auth()
+.signInWithPopup(provider)
+  .then((result) => {
+    const user = result.user;
 
-      /** @type {firebase.auth.OAuthCredential} */
-      var credential = result.credential;
-      var token = credential.accessToken;
-      // The signed-in user info.
-      var user = result.user;
-      window.location.href = '#/wall';
-    }).catch((error) => {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      var email = error.email;
-      var credential = error.credential;
-      // ...
-    });
+    db.collection("users").add({
+      nombre: user.displayName,
+      email: user.email,
+      idUsuario: user.uid,
+      fotoUsuario: user.photoURL,
+    })
+
+    window.location.href = '#/wall';
+  }).catch((error) => {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    var email = error.email;
+    var credential = error.credential;
+    alert(errorCode, errorMessage, email, credential)
+    // ...
+  });
 };
 
 // Registro con correo y contraseña
 export const registrar = (emailRegistro, passwordRegistro, userName) => {
-  firebase.auth().createUserWithEmailAndPassword(emailRegistro, passwordRegistro)
-    .then(() => {
-      // Obtenemos el usuario creado
-      const user = firebase.auth().currentUser;
-
-      // Actualizamos el perfil del usuario con el nombre que ingresó
-      user.updateProfile({ displayName: userName });
-
-      db.collection("users").add({
-        nombre: "hola",
-        email: "email",
-        idUsuario: "id",
-        fotoUsuario: '/src/img/brocoli.png'
-      })
-    })
-    .catch((error) => {
-      console.log({ error })
-    })
+    firebase.auth().createUserWithEmailAndPassword(emailRegistro, passwordRegistro)
+      .then(() => {
+         // Obtenemos el usuario creado
+         const user = firebase.auth().currentUser
+         db.collection("users").add({
+             nombre: userName,
+             email: emailRegistro,
+             idUsuario: user.uid,
+             fotoUsuario: '/src/img/brocoli.png'
+           })
+            })
+            .catch((error) => {
+                console.log({ error })
+            })
 };
-
-export const accederUsuario = () => {
-
+//Login para acceder al muro
+export const accederUsuario = () =>{
+  
   const emailLogin = document.querySelector('.inputMailLogin').value;
   const passwordLogin = document.querySelector('.inputPasswordLogin').value;
 
