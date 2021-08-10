@@ -84,15 +84,7 @@ export const registro = () => {
     fondoRegistrarse.appendChild(btnRegistro);
   
     btnRegistro.addEventListener("click", () => {
-        // Obtengo todos los campos que puso la usuaria
-        const userName = mainRegistro.querySelector(".inputNombre").value;
-        const emailRegistro = mainRegistro.querySelector(".inputCorreoRegistro").value;
-        const passwordRegistro = mainRegistro.querySelector(".inputPasswordRegistro").value;
-        const dieta = mainRegistro.querySelector(".selectDieta").value;
-
-        registrar(emailRegistro, passwordRegistro, userName);
-        window.location.href = '#/login';
-        alert("Ahora ingresa tus datos para acceder a Veggiebook")
+        registrar();
 
     });
     return mainRegistro;

@@ -8,14 +8,15 @@ const provider = new firebase.auth.GoogleAuthProvider();
 firebase.auth()
 .signInWithPopup(provider)
   .then((result) => {
+    observador()
     const user = result.user;
 
-    db.collection("users").add({
-      nombre: user.displayName,
-      email: user.email,
-      idUsuario: user.uid,
-      fotoUsuario: user.photoURL,
-    })
+    // db.collection("users").add({
+    //   nombre: user.displayName,
+    //   email: user.email,
+    //   idUsuario: user.uid,
+    //   fotoUsuario: user.photoURL,
+    // })
 
     window.location.href = '#/wall';
   }).catch((error) => {
@@ -30,42 +31,41 @@ firebase.auth()
 };
 
  // Registro con correo y contraseña
-export const registrar = (emailRegistro, passwordRegistro, userName) => {
-    firebase.auth().createUserWithEmailAndPassword(emailRegistro, passwordRegistro)
-      .then(() => {
-         // Obtenemos el usuario creado
-         const user = firebase.auth().currentUser
-         db.collection("users").add({
-             nombre: userName,
-             email: emailRegistro,
-             idUsuario: user.uid,
-             fotoUsuario: '/src/img/brocoli.png'
-           })
-            })
-            .catch((error) => {
-                console.log({ error })
-            })
-};
-//Login para acceder al muro
-export const accederUsuario = () =>{
+ export const registrar = () => {
+  const emailRegistro = document.querySelector('.inputCorreoRegistro').value;
+  const passwordRegistro = document.querySelector('.inputPasswordRegistro').value;
   
+
+  firebase.auth().createUserWithEmailAndPassword(emailRegistro, passwordRegistro)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      window.location.href = '#/wall';
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+    });
+};
+
+
+//Login para acceder al muro
+export const accederUsuario = () => {
   const emailLogin = document.querySelector('.inputMailLogin').value;
   const passwordLogin = document.querySelector('.inputPasswordLogin').value;
 
-firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
-  .then((userCredential) => {
-    // Signed in
-    var user = userCredential.user;
-    // ...
-    console.log(user)
-    window.location.href = '#/wall'
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(errorMessage)
-    alert("Datos incorrectos")
-  });
+
+  firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      window.location.href = '#/wall';
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      window.location.href = '#/login';
+      console.log(errorMessage, errorCode);
+    });
 };
 
 export const observador = () =>{

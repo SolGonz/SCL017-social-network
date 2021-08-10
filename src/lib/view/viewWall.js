@@ -1,4 +1,4 @@
-
+import { getPost, savePost } from "../funcionesWall.js";
 
 var db = firebase.firestore();
 
@@ -71,42 +71,21 @@ export const wall = () => {
     postContainer.id = "postContainer";
     fondoMuro.appendChild(postContainer);
 
-
+    let idPostEdit = 0;
 
     //comenzamos con las funciones de post
-    postear.addEventListener('submit',  async(e) =>{
+    postear.addEventListener('submit',  (e) =>{
         e.preventDefault();
         const postMessage = mainWall.querySelector('.inputPostear');
         if (postMessage.value === "") {
             alert("Debes escribir tu receta antes de enviar el post")
         }     
         else {
-            await savePost(postMessage.value);
+            savePost(postMessage.value);
              postear.reset();
         }
     });
 
-    //guardando post en la coleccion de firebase
-    const savePost = (postMessage ) =>
-        db.collection('post').doc().set({
-            post: postMessage,
-        });  
-
-    //obtener collecion de post e ir pintando en postContainer
-    const getPost = () => db.collection('post').onSnapshot((querySnapshot) =>{
-        postContainer.innerHTML = '';
-        querySnapshot.forEach((doc) => {
-            console.log(`${doc.id} => ${doc.data().post}`);
-            postContainer.innerHTML += `
-            <div class="container-post">
-                <div class="container-receta">    
-                    <p>${doc.data().post}</p>        
-                </div>
-                <button>Hola</button>
-                <button>Adios</button>
-            </div>  ` 
-        });
-    });
      getPost();
 
 
