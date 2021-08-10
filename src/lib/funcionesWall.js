@@ -51,8 +51,24 @@ export const savePost = (postMessage ) => {
                     <p>${doc.data().post}</p>        
                 </div>
                 <button>Hola</button>
-                <button>Adios</button>
-            </div>  ` 
+                <button post-idfire=${doc.id} id="btn-borrar">Borrar</button>
+            </div>  ` ;
+            const btnBorrar = document.getElementById("btn-borrar");
+                    btnBorrar.addEventListener('click', (e) => {
+                        const element = e.target
+                        const idPost = element.getAttribute("post-idfire")
+                        borrarPost(idPost)
+                    });
+
         });
  
     });
+
+    const borrarPost = (idPost) => {
+        // console.log(idPost)
+        db.collection("post").doc(idPost).delete().then(() => {
+        }).catch((error) => {
+            console.error("Error removing document: ", error);
+        });
+    }
+

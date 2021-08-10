@@ -39,7 +39,7 @@ firebase.auth()
   firebase.auth().createUserWithEmailAndPassword(emailRegistro, passwordRegistro)
     .then((userCredential) => {
       const user = userCredential.user;
-      window.location.href = '#/wall';
+      window.location.href = '#/wall'; 
     })
     .catch((error) => {
       const errorCode = error.code;
