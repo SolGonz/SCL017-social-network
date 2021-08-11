@@ -1,15 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500&display=swap');
-  * {
-    margin: 0;
-    padding: 0;
+
+ @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+ * {
+   margin: 0;
+   padding: 0;
 }
 body{
    height: 100%;
-   background: #FCFCFB;
+   background: rgba(239, 247, 239)
 }
 #root{
-   height: 100%;
-   background: rgba(148, 195, 103, 0.52);
+   height: 100vh;
+   background: rgba(239, 247, 239);
 }
 /* Vista Login */
 .mainLogin{
@@ -18,13 +21,13 @@ body{
     height: 100%;
 }
 .fondoLogo{ 
-    display: flex;
-    flex-direction: column;
-    background: rgba(148, 195, 103, 0.52);
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-    height: 40%;
+   display: flex;
+   flex-direction: column;
+   /* background: rgba(148, 195, 103, 0.52); */
+   justify-content: center;
+   align-items: center;
+   border-radius: 3px;
+   height: 40%;
 }
 .imagen{
     flex-direction: column;
@@ -288,10 +291,9 @@ body{
 /* Vista Wall */
 
 .mainWall{
-    display: flex;
-    flex-direction: column;
-    background: rgba(192, 220, 168);
-    height: 100%;
+   display: flex;
+   flex-direction: column;
+   height: 100%;
 }
     
 .fondoLogoWall{ 
@@ -335,7 +337,7 @@ body{
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   background: rgba(1, 38, 12);
+   background: #52734D;
    width: 90%;
    border-radius: 10px;
    margin: 1% auto;
@@ -353,7 +355,6 @@ body{
 .postearImg{
    width: 100%;
    border-radius: 10px;
-   border: 2px solid rgba(1, 38, 12);  
 }
 
 .inputPostear{
@@ -362,9 +363,11 @@ body{
    height: 50px;
    border-radius: 10px;
    border: rgba(255, 255, 255);
+   font-size: 16px;
+   text-align: center;
    margin: 1% 0;
    padding: 5px;
-   font-size: 18px;
+  
 }
 
 .btnPostear{
@@ -386,8 +389,8 @@ body{
    display: flex;
    align-self: flex-end;
    justify-content: space-around;
+   background-color:  rgba(1, 38, 12);
    width: 100%;
-   background: rgba(1, 38, 12);
    padding: 8px;
    height: 5%;
 }
@@ -403,14 +406,6 @@ body{
 
 }
 .imgCerrar{
-<<<<<<< HEAD
-    width: 48px;
-    height: 32px;
-    border: none;
-    background-image: url('img/imgCerrar.png');
-    cursor: pointer;
-}
-=======
    width: 48px;
    height: 32px;
    border: none;
@@ -426,16 +421,19 @@ body{
 }
 .container-post{
    width: 90%;
+   background-color: #52734D;
+   color: whitesmoke;
+   font-family: "Roboto Mono";
+   font-size: 14px;
    margin: 5px;
    padding: 5px;
-   background-color: rgba(1, 38, 12);
    border-radius: 5px;
 }
 .container-receta{
-   background: white;
+   background: rgba(239, 247, 239);
+   color: black;
    height: auto;
    text-align: center;
    border-radius: 5px;
 }
 
->>>>>>> d81b1db9aedabe677379493d2e8a22b6bd075b0b

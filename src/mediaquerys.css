@@ -56,11 +56,12 @@
     display: flex;
     flex-direction: row;
     width: 60%;    
-    margin-top: 10%;
+    margin-top: 5%;
 }
 .fondoLogo{
   width: 50%;
   height: 600px;
+  background: rgba(148, 195, 103, 0.52);;
   border: 1px solid #8BA889;
   border-radius: 10px;
 
@@ -92,6 +93,7 @@
     flex-direction: row;
     width: 60%; 
     height: 600px;
+    margin-top: 5%;
 }
 .fondoLogoRegistro{
     justify-content: center;

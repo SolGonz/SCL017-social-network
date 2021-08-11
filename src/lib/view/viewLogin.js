@@ -1,4 +1,4 @@
-import { loginGoogle, accederUsuario, observador } from '../funciones.js';
+import { loginGoogle, accederUsuario} from '../funciones.js';
 
 
 
@@ -53,7 +53,6 @@ export const login = () => {
     //Boton de acceso con email y contraseña creadas
     btnIniciar.addEventListener('click', () => {
         accederUsuario();
-        observador();
 
     });
 

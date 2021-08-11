@@ -33,7 +33,18 @@ const showView = (hash) => {
             containerRoot.appendChild(registro());
             break
         case '#/wall':
-        containerRoot.appendChild(wall());
+            //funcion observador
+            // firebase.auth().onAuthStateChanged((user) => {
+            //     //si usuario esta activo pasa esto
+            //     if (user) {
+            //       const uid = user.uid;
+            //       console.log(uid)
+                  containerRoot.appendChild(wall());
+                  //si no esta activo se mantiene en login
+            //     } else {
+            //       window.location.href = '#/login';
+            //     }
+            //   });
             break
         case '#/profile':
          containerRoot.appendChild(profile());
