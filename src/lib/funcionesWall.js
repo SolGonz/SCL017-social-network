@@ -50,14 +50,11 @@ export const savePost = (postMessage ) => {
                 <div class="container-receta">    
                     <p>${doc.data().post}</p>        
                 </div>
-                <button>Hola</button>
+                <button post-idfire=${doc.id} id="btn-editar">Editar</button>
                 <button post-idfire=${doc.id} id="btn-borrar">Borrar</button>
             </div>  ` ;
             const btnBorrar = document.getElementById("btn-borrar");
                     btnBorrar.addEventListener('click', (e) => {
-                        const element = e.target
-                        const idPost = element.getAttribute("post-idfire")
-                        borrarPost(idPost)
                     });
 
         });
