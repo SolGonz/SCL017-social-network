@@ -26,13 +26,16 @@ export const savePost = (postMessage ) => {
                 <div class="container-receta">    
                     <p>${doc.data().post}</p>        
                 </div>
+                <button class="btn-like">🤍</button>
             </div>  ` ;
 
             //si el id guardado al crear el post coincide con  el del usuario logueado se muestran botones editar y borrar
             if (doc.data().userId ==  firebase.auth().currentUser.uid){
                 postContainer.innerHTML += `
+                <div class="btn-container">
                     <button class="btn-editar">Editar Post</button>
                     <button class="btn-borrar" id='borrarPost' value='${doc.id}'></button>
+                </div>
                 `;
                 
                 //botón que activa funcion borrar post
