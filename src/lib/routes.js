@@ -34,21 +34,28 @@ const showView = (hash) => {
             break
         case '#/wall':
             //funcion observador
-            // firebase.auth().onAuthStateChanged((user) => {
-            //     //si usuario esta activo pasa esto
-            //     if (user) {
-            //       const uid = user.uid;
-            //       console.log(uid)
-                  containerRoot.appendChild(wall());
+            firebase.auth().onAuthStateChanged((user) => {
+              //si usuario esta activo pasa esto
+            if (user) {
+                containerRoot.appendChild(wall());
                   //si no esta activo se mantiene en login
-            //     } else {
-            //       window.location.href = '#/login';
-            //     }
-            //   });
+            } else {
+                window.location.href = '#/login';
+            }
+               });
             break
         case '#/profile':
-         containerRoot.appendChild(profile());
-                    break
+            //funcion observador
+             firebase.auth().onAuthStateChanged((user) => {
+            //si usuario esta activo pasa esto
+             if (user) {
+             containerRoot.appendChild(profile());
+               //si no esta activo se mantiene en login
+            } else {
+                  window.location.href = '#/login';
+            }
+                });
+            break
         default:
             containerRoot.innerHTML = '<h2>Página no encontrada :( :( </h2>';
         

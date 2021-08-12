@@ -439,4 +439,12 @@ body{
    text-align: center;
    border-radius: 5px;
 }
+.btn-borrar{
+   background-image: url('img/imgDeleteComment.png');
+   background-repeat: no-repeat;
+   width: 25px;
+   height: 24px;
+   border: none;
+   cursor: pointer;
+}
 

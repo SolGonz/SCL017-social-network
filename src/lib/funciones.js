@@ -41,7 +41,7 @@ firebase.auth()
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
+      alert(errorCode, errorMessage);
     });
 };
 
@@ -60,7 +60,7 @@ export const accederUsuario = () => {
       const errorCode = error.code;
       const errorMessage = error.message;
       window.location.href = '#/login';
-      console.log(errorMessage, errorCode);
+      alert(errorMessage, errorCode);
     });
 };
 
@@ -84,6 +84,5 @@ export const observador = () =>{
       console.log("usuario inactivo")
     }
   });
-
 }
 
