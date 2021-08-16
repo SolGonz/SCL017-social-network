@@ -10,14 +10,7 @@ firebase.auth()
   .then((result) => {
     observador()
     const user = result.user;
-
-    // db.collection("users").add({
-    //   nombre: user.displayName,
-    //   email: user.email,
-    //   idUsuario: user.uid,
-    //   fotoUsuario: user.photoURL,
-    // })
-
+    
     window.location.href = '#/wall';
   }).catch((error) => {
     // Handle Errors here.
@@ -34,17 +27,21 @@ firebase.auth()
  export const registrar = () => {
   const emailRegistro = document.querySelector('.inputCorreoRegistro').value;
   const passwordRegistro = document.querySelector('.inputPasswordRegistro').value;
+  const username = document.querySelector('.inputNombre').value;
   
 
   firebase.auth().createUserWithEmailAndPassword(emailRegistro, passwordRegistro)
     .then((userCredential) => {
-      const user = userCredential.user;
+      // const user = userCredential.user;
       window.location.href = '#/wall'; 
+      userCredential.user.updateProfile({
+        displayName: username,
+      });
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
+      alert(errorCode, errorMessage);
     });
 };
 
@@ -57,14 +54,13 @@ export const accederUsuario = () => {
 
   firebase.auth().signInWithEmailAndPassword(emailLogin, passwordLogin)
     .then((userCredential) => {
-      const user = userCredential.user;
       window.location.href = '#/wall';
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       window.location.href = '#/login';
-      console.log(errorMessage, errorCode);
+      alert(errorMessage, errorCode);
     });
 };
 
@@ -88,6 +84,5 @@ export const observador = () => {
       console.log("usuario inactivo")
     }
   });
-
 }
 

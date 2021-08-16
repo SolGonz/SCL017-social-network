@@ -323,10 +323,10 @@ body{
 .fondoMuro{
    display: flex;
    flex-direction: column;
-   justify-content: flex-start;
+   justify-content: center;
    align-content: center;
    margin: auto;
-   height: 83%;
+   height: auto;
    width: 100%;
    font-family: Tahoma, sans-serif; 
    color: #1b552c;
@@ -353,6 +353,7 @@ body{
    margin: 1.5%;
 }
 .postearImg{
+   display: none;
    width: 100%;
    border-radius: 10px;
 }
@@ -415,8 +416,9 @@ body{
 .postContainer{
    display: flex;
    flex-direction: column;
-   justify-content: center;
+   justify-content: flex-end;
    align-items: center;
+   height: auto;
    margin-top: 8px;
 }
 .container-post{
@@ -435,5 +437,40 @@ body{
    height: auto;
    text-align: center;
    border-radius: 5px;
+}
+.btn-like{
+   margin: 2px;
+   border: none;
+   background: none;
+   width: 20px;
+   height: 19px;
+}
+.btn-container{
+   display: flex;
+   align-items: center;
+   flex-direction: row;
+   justify-content: space-between;
+   width: 90%;
+}
+.btn-editar{
+   background: rgba(151, 195, 103);
+   color:  rgba(1, 38, 12);
+   height: 24px;
+   width: 25%;  
+   border-radius: 20px;
+   border: none;
+   font-family: 'Reem Kufi', sans-serif;
+   margin: 1%;
+   cursor: pointer;
+}
+.btn-borrar{
+   background-image: url('img/imgDeleteComment.png');
+   background-repeat: no-repeat;
+   align-self: flex-end;
+   width: 25px;
+   height: 24px;
+   border: none;
+   cursor: pointer;
+ 
 }
 

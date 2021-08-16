@@ -90,10 +90,10 @@ export const wall = () => {
 
 
 
-    //Barra de navegación inferior
+    //Barra de navegación inferior mobile
     const divBtnNavengacion = document.createElement("div");
     divBtnNavengacion.className = "divBtnNavengacion";
-    fondoMuro.appendChild(divBtnNavengacion);
+    mainWall.appendChild(divBtnNavengacion);
 
     const btnUsuario = document.createElement("button");
     btnUsuario.className = "imgUsuario";
