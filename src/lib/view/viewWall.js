@@ -6,7 +6,7 @@ export const wall = () => {
     const mainWall = document.createElement("div");
     mainWall.className = "mainWall";
     const hola = document.createElement("p");
-    
+
     const fondoLogoWall = document.createElement("div");
     fondoLogoWall.className = "fondoLogoWall";
     mainWall.appendChild(fondoLogoWall);
@@ -26,7 +26,7 @@ export const wall = () => {
 
     
     const imgLogoWall = document.createElement("img");
-    imgLogoWall.src ='img/brocoli.png';
+    imgLogoWall.src = 'img/brocoli.png';
     imgLogoWall.className = "imgLogoWall";
     fondoLogoWall.appendChild(imgLogoWall);
 
@@ -35,11 +35,11 @@ export const wall = () => {
     const textoTituloMuro = document.createTextNode("Muro");
     tituloMuro.appendChild(textoTituloMuro);
     fondoLogoWall.appendChild(tituloMuro);
-    
+
     const fondoMuro = document.createElement("div");
     fondoMuro.className = "fondoMuro";
     mainWall.appendChild(fondoMuro);
- /*frame verde oscuro*/
+    /*frame verde oscuro*/
     const frameFondoPostear = document.createElement("div");
     frameFondoPostear.className = "frameFondoPostear";
     fondoMuro.appendChild(frameFondoPostear);
@@ -49,7 +49,7 @@ export const wall = () => {
     frameFondoPostear.appendChild(postear);
 
     const postearImg = document.createElement("img");
-    postearImg.src ='img/postearImg.png';
+    postearImg.src = 'img/postearImg.png';
     postearImg.className = "postearImg";
     postear.appendChild(postearImg);
 
@@ -98,7 +98,7 @@ export const wall = () => {
     const btnUsuario = document.createElement("button");
     btnUsuario.className = "imgUsuario";
     divBtnNavengacion.appendChild(btnUsuario);
-    
+
     const btnCerrar = document.createElement("button");
     btnCerrar.className = "imgCerrar";
     divBtnNavengacion.appendChild(btnCerrar);
@@ -110,10 +110,11 @@ export const wall = () => {
     });
     btnCerrar.addEventListener("click", () => {
         firebase.auth().signOut()
-        .then(() => {
-            window.location.href = '#/login'
-        });
+            .then(() => {
+                window.location.href = '#/login'
+            });
     });
 
     return mainWall;
 }
+

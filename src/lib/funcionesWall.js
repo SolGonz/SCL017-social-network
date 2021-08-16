@@ -37,21 +37,21 @@ export const savePost = (postMessage ) => {
                     <button class="btn-borrar" id='borrarPost' value='${doc.id}'></button>
                 </div>
                 `;
-                
-                //botón que activa funcion borrar post
-                const btnBorrar = document.querySelectorAll('#borrarPost');
-                btnBorrar.forEach((item) => {
-                  item.addEventListener('click', () => borrarPost(item.value));
-                });
             };
 
         });
+
+       //botón que activa funcion borrar post
+       const btnBorrar = document.querySelectorAll('#borrarPost');
+       btnBorrar.forEach((item) => {
+           item.addEventListener('click', () => borrarPost(item.value));
+       });
  
     });
 
     // Funcion que borra los post
     const borrarPost = (idPost) => {
-        // console.log(idPost)
+        console.log(idPost)
         db.collection("post").doc(idPost).delete().then(() => {
         }).catch((error) => {
             console.error("Error removing document: ", error);
