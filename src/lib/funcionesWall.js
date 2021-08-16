@@ -33,7 +33,7 @@ export const savePost = (postMessage ) => {
             if (doc.data().userId ==  firebase.auth().currentUser.uid){
                 postContainer.innerHTML += `
                 <div class="btn-container">
-                    <button class="btn-editar">Editar Post</button>
+                    <button class="btn-editar" id='editarPost' value='${doc.id}'>Editar Post</button>
                     <button class="btn-borrar" id='borrarPost' value='${doc.id}'></button>
                 </div>
                 `;
@@ -46,6 +46,13 @@ export const savePost = (postMessage ) => {
        btnBorrar.forEach((item) => {
            item.addEventListener('click', () => borrarPost(item.value));
        });
+
+       //botón que activa funcion editar post
+       const btnEditar = document.querySelectorAll('#editarPost');
+       btnEditar.forEach((item) => {
+           item.addEventListener('click', () =>
+           console.log("funciona button"));
+       });
  
     });
 
@@ -56,6 +63,7 @@ export const savePost = (postMessage ) => {
         }).catch((error) => {
             console.error("Error removing document: ", error);
         });
+        
     }
 
 
