@@ -47,19 +47,21 @@
 @media (min-width: 1025px) {
 #root{
     display:flex;
-    height: 100vh;
+    height: 100%;
     justify-content: center;
     align-items: center;
+    background-color: rgba(239, 247, 239);
 }
 .mainLogin {
     display: flex;
     flex-direction: row;
     width: 60%;    
-    margin-top: 10%;
+    margin-top: 5%;
 }
 .fondoLogo{
   width: 50%;
   height: 600px;
+  background: rgba(148, 195, 103, 0.52);;
   border: 1px solid #8BA889;
   border-radius: 10px;
 
@@ -91,6 +93,7 @@
     flex-direction: row;
     width: 60%; 
     height: 600px;
+    margin-top: 5%;
 }
 .fondoLogoRegistro{
     justify-content: center;
@@ -123,4 +126,53 @@
     border: 0px;
     margin-top: 40px;
 }
+.mainWall{
+    height: 100%;
+}
+.fondoLogoWall{
+    height: 3%;
+}
+.imgLogoWall{
+    width: 11%;
+    margin: 2%;
+ }
+ .divBtnNavengacion{
+     display: none;
+ }
+ .NavDesktop{
+     align-self: flex-end;
+     justify-self: flex-end;
+ }
+ .fondoMuro{
+     height: 87%;
+ }
+ .frameFondoPostear{
+     width: 40%;
+ }
+ .postearImg{
+     width: 80%;
+     align-self: center;
+ }
+ .inputPostear{
+     width: 80%;
+     align-self: center;
+     height: 60px;
+     text-align: center;
+     font-size: 18px;
+ }
+ .btnPostear{
+    height: 36px;
+    width: 20%; 
+    align-self: center;
+    font-size: 18px;
+ }
+ .postContainer{
+     width: 40%;
+     margin: auto;
+
+ }
+ .container-receta{
+     font-size: 18px;
+ }
+ 
 }

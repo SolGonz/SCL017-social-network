@@ -1,4 +1,4 @@
-import { loginEmail } from "../funciones.js";
+import { registrar } from "../funciones.js";
 
 
 export const registro = () => {
@@ -59,8 +59,8 @@ export const registro = () => {
     selectDieta.className = "selectDieta";
     selectDieta.id= "selectD";
     const optionCero = document.createElement("option");
-            optionCero.value = 'Dieta';
-            optionCero.text = "Dieta";
+            optionCero.value = 'Selecciona tu dieta';
+            optionCero.text = "Seleciona tu dieta";
             const optionUno = document.createElement("option");
             optionUno.value = 'Vegetariana';
             optionUno.text = "Vegetariana";
@@ -84,18 +84,8 @@ export const registro = () => {
     fondoRegistrarse.appendChild(btnRegistro);
   
     btnRegistro.addEventListener("click", () => {
-        // Obtengo todos los campos que puso la usuaria
-        const displayName = mainRegistro.querySelector(".inputNombre").value;
-        const emailRegistro = mainRegistro.querySelector(".inputCorreoRegistro").value;
-        const passwordRegistro = mainRegistro.querySelector(".inputPasswordRegistro").value;
-        const dieta = mainRegistro.querySelector(".selectDieta").value;
-
-        loginEmail(emailRegistro, passwordRegistro, displayName);
-        window.location.href = '#/login';
-        alert("Ahora ingresa tus datos para acceder a Veggiebook")
+        registrar();
 
     });
-
-
     return mainRegistro;
 }
