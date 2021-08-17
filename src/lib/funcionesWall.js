@@ -45,8 +45,7 @@ export const savePost = (postMessage ) => {
 
         });
 
-        const currentUser = firebase.auth().currentUser.uid; 
-        console.log(currentUser)
+
        //botón que activa funcion borrar post
        const btnBorrar = document.querySelectorAll('#borrarPost');
        btnBorrar.forEach((item) => {
@@ -59,8 +58,16 @@ export const savePost = (postMessage ) => {
        btnLike.forEach((item) => {
         item.addEventListener('click', () => {
             likePost(item.value)         
-        })
-    });
+            })
+        });
+        
+        //botón que activa funcion editar post
+       const btnEditar = document.querySelectorAll('#editarPost');
+       
+       btnEditar.forEach((item) => {
+           item.addEventListener('click', () =>
+           console.log("funciona button"));
+       });
 
  
     });
@@ -69,13 +76,14 @@ export const savePost = (postMessage ) => {
     const borrarPost = (postId) => {
         const confirm = window.confirm('¿Aceptas desaparecer tu bello post del muro?');
         if (confirm === true) {
-        db.collection("post").doc(postId).delete().then(() => {
-        }).catch((error) => {
+            db.collection("post").doc(postId).delete().then(() => {
+            }).catch((error) => {
             console.error("Error removing document: ", error);
-        });
-    }
-}
+            });
+        }
+    };
 
+    //Funcion para actualizar likes
     const likePost = (postId) => {
         const postRef = db.collection('post').doc(postId);
         console.log(postRef)
@@ -88,7 +96,7 @@ export const savePost = (postMessage ) => {
                 // Add one person to the city population.
                 // Note: this could be done without a transaction
                 //       by updating the population using FieldValue.increment()
-                var newLikes = doc.data().like + 1;
+                let newLikes = doc.data().like + 1;
                 transaction.update(postRef, { like: newLikes });
             })
         }).then(() => {
@@ -96,6 +104,6 @@ export const savePost = (postMessage ) => {
         }).catch((error) => {
             console.log("Transaction failed: ", error);
         });
-    }
+    };
 
 

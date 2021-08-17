@@ -12,7 +12,7 @@ export const login = () => {
     mainLogin.appendChild(fondoLogo);
 
     const itemImg = document.createElement("img");
-    itemImg.src ='img/brocoli.png';
+    itemImg.src = 'img/brocoli.png';
     itemImg.className = "imagen";
     fondoLogo.appendChild(itemImg);
 
@@ -54,7 +54,7 @@ export const login = () => {
     btnIniciar.addEventListener('click', () => {
         accederUsuario();
 
-    });    
+    });
 
     const parrafoGoogle = document.createElement("p");
     parrafoGoogle.className = "parrafoGoogle";
@@ -66,11 +66,11 @@ export const login = () => {
     googleBoton.className = "googleBoton";
     fondoIniciarSesion.appendChild(googleBoton);
 
-      //Boton de acceso con Google
-      const btnGoogle = mainLogin.querySelector(".googleBoton");
-      btnGoogle.addEventListener("click", () => {
-          loginGoogle();
-          });
+    //Boton de acceso con Google
+    const btnGoogle = mainLogin.querySelector(".googleBoton");
+    btnGoogle.addEventListener("click", () => {
+        loginGoogle();
+    });
 
     const divRegistro = document.createElement("div");
     divRegistro.className = "divRegistro";
@@ -89,6 +89,9 @@ export const login = () => {
 
     fondoIniciarSesion.appendChild(divRegistro);
 
-        
+
     return mainLogin;
 };
+
+
+

@@ -2,8 +2,8 @@ var db = firebase.firestore();
 
 
 //Login con google
-export const loginGoogle = () =>{
-const provider = new firebase.auth.GoogleAuthProvider();
+export const loginGoogle = () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
 
 firebase.auth()
 .signInWithPopup(provider)
@@ -64,7 +64,7 @@ export const accederUsuario = () => {
     });
 };
 
-export const observador = () =>{
+export const observador = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       console.log("usuario activo")
