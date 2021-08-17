@@ -16,9 +16,9 @@ body{
 }
 /* Vista Login */
 .mainLogin{
-   display: flex;
-   flex-direction: column;
-   height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 .fondoLogo{ 
    display: flex;
@@ -30,264 +30,263 @@ body{
    height: 40%;
 }
 .imagen{
-   flex-direction: column;
-   justify-content: center;
-   align-content: center; 
-   width: 105px;
-   height: 110px;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center; 
+    width: 105px;
+    height: 110px;
 }
 .saludo{
-   font-weight: normal;
-   font-family: Tahoma, sans-serif;
-   font-size: 16px;
-   line-height: 27px;
-   text-align: center;
-   color: #1b552c;
-   margin: 0 10px 20px 10px;
+    font-weight: normal;
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 27px;
+    text-align: center;
+    color: #1b552c;
+    margin: 0 10px 20px 10px;
 }
 
 .fondoIniciar{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   background-color: rgba(239, 247, 239);
-   height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(239, 247, 239);
+    height: 60%;
 }
 .parrafoInicio{
-   text-align: center; 
-   font-weight: bold; 
-   font-family: Tahoma, sans-serif;
-   font-size: 19px;
-   color: #043d14;
-   margin: 25px 5px;
+    text-align: center; 
+    font-weight: bold; 
+    font-family: Tahoma, sans-serif;
+    font-size: 19px;
+    color: #043d14;
+    margin: 25px 5px;
 
 }
 
 .inputMailLogin {
-   background: #FFFFFF;
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-   font-style: italic;
-   text-align: center;
-   border: 1px solid #CCC;
-   border-radius: 4px;
-   width: 70%;
-   line-height: 32px;
-   align-self: center;
-   margin-bottom: 10px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+    text-align: center;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    width: 70%;
+    line-height: 32px;
+    align-self: center;
+    margin-bottom: 10px;
 }
 
 .inputPasswordLogin {
-   background: #FFFFFF;
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-   font-style: italic;
-   text-align: center;
-   border: 1px solid #CCC;
-   border-radius: 4px;
-   width: 70%;
-   line-height: 32px;
-   align-self: center;
-   
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+    text-align: center;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    width: 70%;
+    line-height: 32px;
+    align-self: center;
+    
 }
 
 .btnIniciar {
-   background: rgba(73, 146, 79, 0.88);
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-   border-radius: 20px;
-   color: #FFF;
-   border: 0px;
-   width: 150px;
-   line-height: 32px;
-   margin-top: 30px;
-   cursor:pointer;
+    background: rgba(73, 146, 79, 0.88);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    color: #FFF;
+    border: 0px;
+    width: 150px;
+    line-height: 32px;
+    margin-top: 30px;
+    cursor:pointer;
 }
 .parrafoGoogle{
-   font-family: Tahoma, sans-serif;
-   font-size: 12px;
-   margin: 5px;
-   color: #FE8358;
-   font-weight: bold;
+    font-family: Tahoma, sans-serif;
+    font-size: 12px;
+    margin: 5px;
+    color: #FE8358;
+    font-weight: bold;
 }
 .googleBoton{
-   background: url('img/logoGoogle.png');
-   width: 30px;
-   height: 30px;
-   border: none;
-   cursor: pointer;
+    background: url('img/logoGoogle.png');
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
 }
 
 .divRegistro{
-   display: flex;
-   flex-direction: row;
-   margin-top: 35px;
-   font-family: Tahoma, sans-serif;
-   font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 35px;
+    font-family: Tahoma, sans-serif;
+    font-size: 14px;
 }
 .parrafoRegistro{
-   margin-right: 8px;
+    margin-right: 8px;
 }
 .parrafoRegistroAqui{
-   color: #FE8358;
-   cursor: pointer;
+    color: #FE8358;
+    cursor: pointer;
 }
 /* Vista Registro */
 .mainRegistro{
-   display: flex;
-   flex-direction: column;
-   height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
-   
+    
 .fondoLogoRegistro{ 
-   display: flex;
-   flex-direction: column;
-   width: 100%;
-   height: 30%;
-   justify-content: center;
-   align-items: center;
-   border-radius: 3px;
-   background: rgba(239, 247, 239);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    background: rgba(239, 247, 239);
 }
 
 .itemImagen{
-   width: 105px;
-   height: 110px;
+    width: 105px;
+    height: 110px;
 }
 .tituloRegistro{
-   font-weight: normal;
-   font-family: Tahoma, sans-serif;
-   font-size: 19px;
-   line-height: 3.0;
-   text-align: center;
-   color: #1b552c;
-   letter-spacing: 3px;
+    font-weight: normal;
+    font-family: Tahoma, sans-serif;
+    font-size: 19px;
+    line-height: 3.0;
+    text-align: center;
+    color: #1b552c;
+    letter-spacing: 3px;
 }
 
 .fondoRegistrarse{
-   display: flex;
-   justify-content: flex-start;
-   align-items: center;
-   flex-direction: column;
-   height: 70%;
-   font-family: Tahoma, sans-serif; 
-   font-weight: normal;
-   color: #1b552c;
-   font-size: 18px;
-   line-height: 2.5;
-   background: rgba(239, 247, 239);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 70%;
+    font-family: Tahoma, sans-serif; 
+    font-weight: normal;
+    color: #1b552c;
+    font-size: 18px;
+    line-height: 2.5;
+    background: rgba(239, 247, 239);
 }
 
 .textoNombre{
-   clear: both;
-   font-family: Tahoma, sans-serif;
-   font-size: 22px;
-   color: #043d14;
-   
+    clear: both;
+    font-family: Tahoma, sans-serif;
+    font-size: 22px;
+    color: #043d14;
+    
 }
 .btnRegistro{
-   background: rgba(73, 146, 79, 0.88);
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-   border-radius: 20px;
-   color: #FFF;
-   border: 0px;
-   width: 150px;
-   line-height: 32px;
-   margin-top: 30px;
-   cursor:pointer;
+    background: rgba(73, 146, 79, 0.88);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    color: #FFF;
+    border: 0px;
+    width: 150px;
+    line-height: 32px;
+    margin-top: 30px;
+    cursor:pointer;
 }
 .inputNombre{
-   background: #FFFFFF;
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-   font-style: italic;
-   text-align: center;
-   border: 1px solid #CCC;
-   border-radius: 4px;
-   width: 70%;
-   line-height: 32px;
-   align-self: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+    text-align: center;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    width: 70%;
+    line-height: 32px;
+    align-self: center;
 }
 .inputCorreoRegistro{
-   background: #FFFFFF;
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-   font-style: italic;
-   text-align: center;
-   border: 1px solid #CCC;
-   border-radius: 4px;
-   width: 70%;
-   line-height: 32px;
-   align-self: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+    text-align: center;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    width: 70%;
+    line-height: 32px;
+    align-self: center;
 }
 .selectDieta{
-   background: #FFFFFF;
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-   border: 1px solid #CCC;
-   border-radius: 4px;
-   width: 70%;
-   height: 35px;
-   align-self: center;
-   color: #565550;
-   font-style: italic;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    width: 70%;
+    height: 35px;
+    align-self: center;
+    color: #565550;
+    font-style: italic;
 }
 .inputPasswordRegistro {
-   background: #FFFFFF;
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-   font-style: italic;
-   text-align: center;
-   border: 1px solid #CCC;
-   border-radius: 4px;
-   width: 70%;
-   line-height: 32px;
-   align-self: center;
-   
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+    text-align: center;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    width: 70%;
+    line-height: 32px;
+    align-self: center;
+    
 }
 /* Vista Profile */
 .mainProfile {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   width: 100%;
-   height: 100vh;
-   background-color: #EFF7EF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #EFF7EF;
 }
 .mainDatos{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   background-color: #C0DCA8;
-   width: 90%;
-   border-radius: 9px;
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #C0DCA8;
+    width: 90%;
+    border-radius: 9px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 
 }
-
 .imgPerfil{
-   width: 100px;
-   height: 100px;
+    width: 100px;
+    height: 100px;
 }
 .divNombre{
-   background: #01260C;
-   width: 90%;
-   height: 100px;
-   border-radius: 5px;
-   margin: 5px 0;
+    background: #01260C;
+    width: 90%;
+    height: 100px;
+    border-radius: 5px;
+    margin: 5px 0;
 }
 .divIntereses{
-   background: #01260C;
-   width: 90%;
-   height: 100px;
-   border-radius: 5px;
-   margin: 10px 0;
+    background: #01260C;
+    width: 90%;
+    height: 100px;
+    border-radius: 5px;
+    margin: 10px 0;
 }
 .btnAtras{
-   background: rgba(73, 146, 79, 0.88);
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-   border-radius: 20px;
-   color: #FFF;
-   width: 150px;
-   height: 32px;
-   border: 0px;
-   margin-top: 30px;
-   cursor:pointer;
+    background: rgba(73, 146, 79, 0.88);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    color: #FFF;
+    width: 150px;
+    height: 32px;
+    border: 0px;
+    margin-top: 30px;
+    cursor:pointer;
 }
 /* Vista Wall */
 
@@ -296,29 +295,29 @@ body{
    flex-direction: column;
    height: 100%;
 }
-   
+    
 .fondoLogoWall{ 
-   display: flex;
-   flex-wrap: wrap;
-   width: 100%;
-   height: 12%;
-   justify-content: flex-start;
-   align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 12%;
+    justify-content: flex-start;
+    align-content: center;
 
 }
 
 .imgLogoWall{
-   width: 25%;
-   margin: 5%;
+    width: 25%;
+    margin: 5%;
 }
 
 .tituloMuro{
-   font-family: 'Reem Kufi', sans-serif;
-   font-size: 50px;
-   align-self: center;
-   color: #1b552c;
-   letter-spacing: 3px;
-   margin: 2%;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 50px;
+    align-self: center;
+    color: #1b552c;
+    letter-spacing: 3px;
+    margin: 2%;
 }
 
 .fondoMuro{
@@ -398,13 +397,13 @@ body{
 }
 
 .imgUsuario{
-   height: 32px;
-   width: 34px;
-   border-radius: 100%;
-   border: none;
-   background-image: url('img/imgUsuario.png');
-   background-repeat: no-repeat;
-   cursor:pointer;
+    height: 32px;
+    width: 34px;
+    border-radius: 100%;
+    border: none;
+    background-image: url('img/imgUsuario.png');
+    background-repeat: no-repeat;
+    cursor:pointer;
 
 }
 .imgCerrar{
