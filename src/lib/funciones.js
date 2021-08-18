@@ -5,35 +5,35 @@ var db = firebase.firestore();
 export const loginGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
 
-firebase.auth()
-.signInWithPopup(provider)
-  .then((result) => {
-    observador()
-    const user = result.user;
-    
-    window.location.href = '#/wall';
-  }).catch((error) => {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    var email = error.email;
-    var credential = error.credential;
-    alert(errorCode, errorMessage, email, credential)
-    // ...
-  });
+  firebase.auth()
+    .signInWithPopup(provider)
+    .then((result) => {
+      observador()
+      const user = result.user;
+
+      window.location.href = '#/wall';
+    }).catch((error) => {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      var email = error.email;
+      var credential = error.credential;
+      alert(errorCode, errorMessage, email, credential)
+      // ...
+    });
 };
 
- // Registro con correo y contraseña
- export const registrar = () => {
+// Registro con correo y contraseña
+export const registrar = () => {
   const emailRegistro = document.querySelector('.inputCorreoRegistro').value;
   const passwordRegistro = document.querySelector('.inputPasswordRegistro').value;
   const username = document.querySelector('.inputNombre').value;
-  
+
 
   firebase.auth().createUserWithEmailAndPassword(emailRegistro, passwordRegistro)
     .then((userCredential) => {
       // const user = userCredential.user;
-      window.location.href = '#/wall'; 
+      window.location.href = '#/wall';
       userCredential.user.updateProfile({
         displayName: username,
       });
@@ -85,4 +85,3 @@ export const observador = () => {
     }
   });
 }
-
