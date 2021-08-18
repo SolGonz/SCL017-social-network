@@ -10,6 +10,7 @@ export const savePost = (postMessage ) => {
             date: firebase.firestore.FieldValue.serverTimestamp(),
             userId: user.uid,
             like:0,
+          
         })
   };
 
@@ -26,7 +27,10 @@ export const savePost = (postMessage ) => {
                 <div class="container-receta">    
                     <p>${doc.data().post}</p>        
                 </div>
-                <button class="btn-like">🤍</button>
+                <div class="container-like">
+                    <button class='btn-like' id='likePost' value='${doc.id}'> 🤍 </button>
+                    <span>${doc.data().like}</span>
+                </div>
             </div>  ` ;
 
             //si el id guardado al crear el post coincide con  el del usuario logueado se muestran botones editar y borrar
@@ -41,20 +45,32 @@ export const savePost = (postMessage ) => {
 
         });
 
+
        //botón que activa funcion borrar post
        const btnBorrar = document.querySelectorAll('#borrarPost');
        btnBorrar.forEach((item) => {
            item.addEventListener('click', () => borrarPost(item.value));
        });
 
-       //botón que activa funcion editar post
+       //boton like
+       const btnLike = document.querySelectorAll('#likePost');
+
+       btnLike.forEach((item) => {
+        item.addEventListener('click', () => {
+            likePost(item.value)         
+            })
+        });
+        
+        //botón que activa funcion editar post
        const btnEditar = document.querySelectorAll('#editarPost');
+       
        btnEditar.forEach((item) => {
            const currentText = (item.dataset.post)
            item.addEventListener('click', () =>
             editarPost(item.value, currentText) 
            );
        });
+
  
     });
     
@@ -74,13 +90,37 @@ const editarPost = (idPostEdit, currentText) => {
 
 
     // Funcion que borra los post
-    const borrarPost = (idPost) => {
-        console.log(idPost)
-        db.collection("post").doc(idPost).delete().then(() => {
-        }).catch((error) => {
+    const borrarPost = (postId) => {
+        const confirm = window.confirm('¿Aceptas desaparecer tu bello post del muro?');
+        if (confirm === true) {
+            db.collection("post").doc(postId).delete().then(() => {
+            }).catch((error) => {
             console.error("Error removing document: ", error);
+            });
+        }
+    };
+
+    //Funcion para actualizar likes
+    const likePost = (postId) => {
+        const postRef = db.collection('post').doc(postId);
+        console.log(postRef)
+        return db.runTransaction((transaction) => {
+            // This code may get re-run multiple times if there are conflicts.
+            return transaction.get(postRef).then((doc) => {
+                if (!doc.exists) {
+                    throw "Document does not exist!";
+                }
+                // Add one person to the city population.
+                // Note: this could be done without a transaction
+                //       by updating the population using FieldValue.increment()
+                let newLikes = doc.data().like + 1;
+                transaction.update(postRef, { like: newLikes });
+            })
+        }).then(() => {
+            console.log("Transaction successfully committed!");
+        }).catch((error) => {
+            console.log("Transaction failed: ", error);
         });
-        
-    }
+    };
 
 

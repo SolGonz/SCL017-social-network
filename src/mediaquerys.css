@@ -147,7 +147,7 @@
      height: 87%;
  }
  .frameFondoPostear{
-     width: 40%;
+     width: 100%;
  }
  .postearImg{
      width: 80%;
@@ -167,7 +167,7 @@
     font-size: 18px;
  }
  .postContainer{
-     width: 40%;
+     width: 700px;
      margin: auto;
 
  }

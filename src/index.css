@@ -419,6 +419,7 @@ body{
    justify-content: flex-end;
    align-items: center;
    height: auto;
+   width: 100%;
    margin-top: 8px;
 }
 .container-post{
@@ -438,13 +439,7 @@ body{
    text-align: center;
    border-radius: 5px;
 }
-.btn-like{
-   margin: 2px;
-   border: none;
-   background: none;
-   width: 20px;
-   height: 19px;
-}
+
 .btn-container{
    display: flex;
    align-items: center;
@@ -473,4 +468,17 @@ body{
    cursor: pointer;
  
 }
+.container-like{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+.btn-like{
+   margin: 2px;
+   border: none;
+   background: none;
+   width: 20px;
+   height: 19px;
+}
+
 
