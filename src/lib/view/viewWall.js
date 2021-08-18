@@ -1,29 +1,12 @@
 import { getPost, savePost } from "../funcionesWall.js";
 
-var db = firebase.firestore();
-
 export const wall = () => {
     const mainWall = document.createElement("div");
     mainWall.className = "mainWall";
-    const hola = document.createElement("p");
 
     const fondoLogoWall = document.createElement("div");
     fondoLogoWall.className = "fondoLogoWall";
     mainWall.appendChild(fondoLogoWall);
-
-    //Barra de navegación desktop
-    const barraNavDesktop = document.createElement("div");
-    barraNavDesktop.className = "NavDesktop";
-    fondoLogoWall.appendChild(barraNavDesktop);
-
-    const btnUsuarioDesk = document.createElement("button");
-    btnUsuarioDesk.className = "imgUsuarioDesk";
-    barraNavDesktop.appendChild(btnUsuarioDesk);
-
-    const btnCerrarDesk = document.createElement("button");
-    btnCerrarDesk.className = "imgCerrarDesk";
-    barraNavDesktop.appendChild(btnCerrarDesk);
-
 
     const imgLogoWall = document.createElement("img");
     imgLogoWall.src = 'img/brocoli.png';
@@ -36,6 +19,28 @@ export const wall = () => {
     tituloMuro.appendChild(textoTituloMuro);
     fondoLogoWall.appendChild(tituloMuro);
 
+    //Barra de navegación desktop
+    const barraNavDesktop = document.createElement("div");
+    barraNavDesktop.className = "NavDesktop";
+    fondoLogoWall.appendChild(barraNavDesktop);
+  
+    const btnUsuarioDesk = document.createElement("button");
+    btnUsuarioDesk.innerText = "Perfil"
+    btnUsuarioDesk.className = "imgUsuarioDesk";
+    barraNavDesktop.appendChild(btnUsuarioDesk);
+  
+    const btnCerrarDesk = document.createElement("button");
+    btnCerrarDesk.className = "imgCerrarDesk";
+    barraNavDesktop.appendChild(btnCerrarDesk);
+
+    btnCerrarDesk.addEventListener("click", () => {
+        firebase.auth().signOut()
+            .then(() => {
+                window.location.href = '#/login'
+            });
+    });
+
+
     const fondoMuro = document.createElement("div");
     fondoMuro.className = "fondoMuro";
     mainWall.appendChild(fondoMuro);
@@ -47,11 +52,6 @@ export const wall = () => {
     const postear = document.createElement("form");
     postear.className = "postear";
     frameFondoPostear.appendChild(postear);
-
-    const postearImg = document.createElement("img");
-    postearImg.src = 'img/postearImg.png';
-    postearImg.className = "postearImg";
-    postear.appendChild(postearImg);
 
     const inputPostear = document.createElement("input");
     inputPostear.className = "inputPostear";
