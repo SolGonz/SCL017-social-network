@@ -1,4 +1,4 @@
-import { loginGoogle, accederUsuario} from '../funciones.js';
+import { loginGoogle, accederUsuario } from '../funciones.js';
 
 
 
@@ -92,6 +92,3 @@ export const login = () => {
 
     return mainLogin;
 };
-
-
-

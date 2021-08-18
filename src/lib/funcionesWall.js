@@ -33,7 +33,7 @@ export const savePost = (postMessage ) => {
             if (doc.data().userId ==  firebase.auth().currentUser.uid){
                 postContainer.innerHTML += `
                 <div class="btn-container">
-                    <button class="btn-editar" id='editarPost' value='${doc.id}'>Editar Post</button>
+                    <button class="btn-editar" id='editarPost' value='${doc.id}' data-post="${(doc.data().post)}">Editar Post</button>
                     <button class="btn-borrar" id='borrarPost' value='${doc.id}'></button>
                 </div>
                 `;
@@ -50,11 +50,28 @@ export const savePost = (postMessage ) => {
        //botón que activa funcion editar post
        const btnEditar = document.querySelectorAll('#editarPost');
        btnEditar.forEach((item) => {
+           const currentText = (item.dataset.post)
            item.addEventListener('click', () =>
-           console.log("funciona button"));
+            editarPost(item.value, currentText) 
+           );
        });
  
     });
+    
+const editarPost = (idPostEdit, currentText) => {
+    const post = prompt('Ingresa el nuevo texto', currentText)
+         return db.collection("post").doc(idPostEdit).update({
+             post
+        })
+            .then(() => {
+                console.log("Document successfully updated!");
+            })
+            .catch((error) => {
+                // The document probably doesn't exist.
+                console.error("Error updating document: ", error);
+            });
+    };
+
 
     // Funcion que borra los post
     const borrarPost = (idPost) => {

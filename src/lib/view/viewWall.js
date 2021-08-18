@@ -11,20 +11,20 @@ export const wall = () => {
     fondoLogoWall.className = "fondoLogoWall";
     mainWall.appendChild(fondoLogoWall);
 
-        //Barra de navegación desktop
-        const barraNavDesktop = document.createElement("div");
-        barraNavDesktop.className = "NavDesktop";
-        fondoLogoWall.appendChild(barraNavDesktop);
-    
-        const btnUsuarioDesk = document.createElement("button");
-        btnUsuarioDesk.className = "imgUsuarioDesk";
-        barraNavDesktop.appendChild(btnUsuarioDesk);
-        
-        const btnCerrarDesk = document.createElement("button");
-        btnCerrarDesk.className = "imgCerrarDesk";
-        barraNavDesktop.appendChild(btnCerrarDesk);
+    //Barra de navegación desktop
+    const barraNavDesktop = document.createElement("div");
+    barraNavDesktop.className = "NavDesktop";
+    fondoLogoWall.appendChild(barraNavDesktop);
 
-    
+    const btnUsuarioDesk = document.createElement("button");
+    btnUsuarioDesk.className = "imgUsuarioDesk";
+    barraNavDesktop.appendChild(btnUsuarioDesk);
+
+    const btnCerrarDesk = document.createElement("button");
+    btnCerrarDesk.className = "imgCerrarDesk";
+    barraNavDesktop.appendChild(btnCerrarDesk);
+
+
     const imgLogoWall = document.createElement("img");
     imgLogoWall.src = 'img/brocoli.png';
     imgLogoWall.className = "imgLogoWall";
@@ -43,7 +43,7 @@ export const wall = () => {
     const frameFondoPostear = document.createElement("div");
     frameFondoPostear.className = "frameFondoPostear";
     fondoMuro.appendChild(frameFondoPostear);
-/* frame blanco*/
+    /* frame blanco*/
     const postear = document.createElement("form");
     postear.className = "postear";
     frameFondoPostear.appendChild(postear);
@@ -58,7 +58,7 @@ export const wall = () => {
     inputPostear.type = "text"
     inputPostear.placeholder = "¿Qué quieres escribir?";
     postear.appendChild(inputPostear)
-    
+
 
     const btnPostear = document.createElement("button");
     btnPostear.className = "btnPostear"
@@ -74,19 +74,19 @@ export const wall = () => {
     let idPostEdit = 0;
 
     //comenzamos con las funciones de post
-    postear.addEventListener('submit',  (e) =>{
+    postear.addEventListener('submit', (e) => {
         e.preventDefault();
         const postMessage = mainWall.querySelector('.inputPostear');
         if (postMessage.value === "") {
             alert("Debes escribir tu receta antes de enviar el post")
-        }     
+        }
         else {
             savePost(postMessage.value);
-             postear.reset();
+            postear.reset();
         }
     });
 
-     getPost();
+    getPost();
 
 
 
@@ -117,4 +117,3 @@ export const wall = () => {
 
     return mainWall;
 }
-
