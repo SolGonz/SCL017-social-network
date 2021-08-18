@@ -1,12 +1,19 @@
-export const postView = () =>{
 
-const postContainer = document.createElement("div");
-postContainer.className = "postContainer";
+export const postView = () => {
 
-const newPost = `
+    const postContainer = document.createElement("div");
+    postContainer.className = "postContainer";
+
+    const newPost = `
 <div class="box-post" 
 `
 
+
+
+
+
+    return addPost
+}
 
 
 

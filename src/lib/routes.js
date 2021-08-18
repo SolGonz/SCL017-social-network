@@ -4,18 +4,18 @@ import { wall } from "./view/viewWall.js";
 import { profile } from "./view/viewEditProfile.js";
 
 export const route = (hash) => {
-if ( hash === '#/'){
-    return showView(hash);
-} if (hash === '#/login'){
-    return showView(hash);
-} if (hash === '#/registro'){
-    return showView(hash);
-} if ( hash === '#/wall'){
-    return showView(hash);
-}
-if ( hash === '#/profile'){
-    return showView(hash);
-}
+    if (hash === '#/') {
+        return showView(hash);
+    } if (hash === '#/login') {
+        return showView(hash);
+    } if (hash === '#/registro') {
+        return showView(hash);
+    } if (hash === '#/wall') {
+        return showView(hash);
+    }
+    if (hash === '#/profile') {
+        return showView(hash);
+    }
     return showView(hash);
 };
 
@@ -35,29 +35,29 @@ const showView = (hash) => {
         case '#/wall':
             //funcion observador
             firebase.auth().onAuthStateChanged((user) => {
-              //si usuario esta activo pasa esto
-            if (user) {
-                containerRoot.appendChild(wall());
-                  //si no esta activo se mantiene en login
-            } else {
-                window.location.href = '#/login';
-            }
-               });
+                //si usuario esta activo pasa esto
+                if (user) {
+                    containerRoot.appendChild(wall());
+                    //si no esta activo se mantiene en login
+                } else {
+                    window.location.href = '#/login';
+                }
+            });
             break
         case '#/profile':
             //funcion observador
-             firebase.auth().onAuthStateChanged((user) => {
-            //si usuario esta activo pasa esto
-             if (user) {
-             containerRoot.appendChild(profile());
-               //si no esta activo se mantiene en login
-            } else {
-                  window.location.href = '#/login';
-            }
-                });
+            firebase.auth().onAuthStateChanged((user) => {
+                //si usuario esta activo pasa esto
+                if (user) {
+                    containerRoot.appendChild(profile());
+                    //si no esta activo se mantiene en login
+                } else {
+                    window.location.href = '#/login';
+                }
+            });
             break
         default:
             containerRoot.innerHTML = '<h2>Página no encontrada :( :( </h2>';
-        
+
     }
 };
