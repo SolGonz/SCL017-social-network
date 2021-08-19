@@ -76,6 +76,9 @@ export const savePost = (postMessage ) => {
     
 const editarPost = (idPostEdit, currentText) => {
     const post = prompt('Ingresa el nuevo texto', currentText)
+        if (post.trim().length === 0) {
+            alert ("Rellena el campo solicitado")
+        };                                                                           
          return db.collection("post").doc(idPostEdit).update({
              post
         })
