@@ -78,6 +78,7 @@
 .fondoIniciar{
     width: 50%;
     height: 600px;
+    background: whitesmoke;
     border: 1px solid #8BA889;
     border-radius: 10px;
 }
@@ -106,6 +107,7 @@
 .fondoRegistrarse{
     justify-content: center;
     width: 50%; 
+    background: whitesmoke;
     border: 1px solid #8BA889;
     height: 600px;
     border-radius: 10px;
@@ -128,35 +130,59 @@
 }
 .mainWall{
     height: 100%;
+    width: 100%;
 }
 .fondoLogoWall{
-    height: 3%;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 200px;
+}
+.divBtnNavengacion{
+    display: none;
+
+}
+.tituloMuro{
+    width: 200px;
 }
 .imgLogoWall{
-    width: 11%;
-    margin: 2%;
- }
- .divBtnNavengacion{
-     display: none;
+    width: 150px;
  }
  .NavDesktop{
-     align-self: flex-end;
-     justify-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 250px;
+}
+ .imgCerrarDesk{
+    width: 60px;
+    height: 60px;
+    background: none;
+    border: none;
+    background-image: url('img/cerrar-sesion.png');
+    cursor: pointer;
+ }
+ .imgUsuarioDesk{
+     display: none;
+    height: 32px;
+    width: 34px;
+    border-radius: 100%;
+    border: none;
+    background-image: url('img/imgUsuario.png');
+    background-repeat: no-repeat;
+    cursor:pointer;
  }
  .fondoMuro{
-     height: 87%;
+     height: auto;
  }
  .frameFondoPostear{
-     width: 100%;
+     width: 700px;
  }
- .postearImg{
-     width: 80%;
-     align-self: center;
- }
+
  .inputPostear{
-     width: 80%;
+     width: 90%;
      align-self: center;
-     height: 60px;
+     height: 70px;
      text-align: center;
      font-size: 18px;
  }
