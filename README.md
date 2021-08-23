@@ -1,6 +1,6 @@
-##Red Social Veggiebook 
+# Red Social Veggiebook 
 
-###Definición del producto
+### Definición del producto
 Veggibook es una red social enfoncada en personas vegetarianas o veganas entre un rango etario desde los 18 hasta los 35 años, que están en busca de recetas fáciles, ricas y/o saludables, compartidas por personas con similares necesidades.
 
 El objetivo de esta red social es facilitar el acceso a recetas libres de animales, a personas comunes y corrientes, lo que servirá para hacer más accesible su estilo de alimentación, creando a la vez un sentido de pertenencia. 
@@ -13,7 +13,7 @@ Luedo de establecer en grupo las funcionalidades que tendría el sitio, se crear
 
 
 
-###Prototipos
+### Prototipos
 En primer lugar, se crearon prototipos de baja fidelidad a partir de las Historias de usuario establecidas. De esta forma, se comenzó a establecer la arquitectura que tendría el sitio.
 
 ![Sketch Baja 1](src/img/prototipo-baja.png)
@@ -30,9 +30,9 @@ En primer lugar, se crearon prototipos de baja fidelidad a partir de las Histori
 
 Se pensaron colores relacionados a un estilo de vida saludable y con un estilo de alimentación basado en plantas. 
 
-![Paleta de colores sitio](src/img/paleta-colores.png)
+![Paleta de colores sitio](src/img/Paleta-colores.png)
 
 
 
-##Testeos de usabilidad
+## Testeos de usabilidad
 
