@@ -35,4 +35,8 @@ Se pensaron colores relacionados a un estilo de vida saludable y con un estilo d
 
 
 ## Testeos de usabilidad
+Se realizaron algunos test de usabilidad, para alertar de ciertos errores o problemas de flujo que pidera tener el sitio.  A continuación se adjunta el link a uno de ellos.
+
+https://drive.google.com/file/d/16s5mYDdWxdyOgk8fb4riAawYgkMd5Tcw/view
+
 
