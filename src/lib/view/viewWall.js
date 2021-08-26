@@ -54,6 +54,7 @@ export const wall = () => {
     frameFondoPostear.appendChild(postear);
 
     const inputPostear = document.createElement("input");
+    inputPostear.id = "inputPost"
     inputPostear.className = "inputPostear";
     inputPostear.type = "text"
     inputPostear.placeholder = "¿Qué quieres escribir?";

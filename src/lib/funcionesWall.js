@@ -128,5 +128,3 @@ const editarPost = (idPostEdit, currentText) => {
         });
     };
 
-
-
